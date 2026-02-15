@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Something's Not Right - Peter Kleinhans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --gray-light: #f5f5f5;
+            --gray-mid: #666666;
+            --accent: #2952a3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .back-link {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            text-decoration: none;
+            color: var(--black);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            z-index: 100;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .song-hero {
+            padding: 8rem 4rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .song-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .song-meta {
+            font-size: 1rem;
+            color: var(--gray-mid);
+            margin-bottom: 3rem;
+            letter-spacing: 0.1em;
+        }
+
+        .song-photo {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .player-box {
+            background: var(--black);
+            padding: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        audio {
+            width: 100%;
+            height: 50px;
+        }
+
+        .lyrics-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .lyrics-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+            text-align: center;
+        }
+
+        .lyrics {
+            font-size: 1.1rem;
+            line-height: 2;
+            white-space: pre-line;
+            color: var(--black);
+        }
+
+        .song-navigation {
+            background: var(--gray-light);
+            padding: 3rem 4rem;
+            text-align: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--black);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--black);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .song-hero {
+                padding: 6rem 2rem 3rem;
+            }
+
+            .song-title {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="selections-album.html" class="back-link">← Back to Selections</a>
+
+    <div class="song-hero">
+        <h1 class="song-title">Something's Not Right</h1>
+        <p class="song-meta">From Selections (2026) · Track 05</p>
+
+        <img src="images/somethings-not-right-photo.png" alt="Something's Not Right" class="song-photo">
+
+        <div class="player-box">
+            <audio controls>
+                <source src="https://www.dropbox.com/scl/fi/1gadyvftkbsgd217p1fb5/Something_s-Not-Right.mp3?rlkey=j35jpeh9ku9tspg0q5agddnvw&dl=1" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
+    <div class="lyrics-section">
+        <p style="text-align: center; color: var(--gray-mid); font-size: 0.95rem; margin-bottom: 3rem; font-style: italic;">
+            Note: Audio player will be activated once MP3 files are uploaded to the web server.
+        </p>
+
+        <h2 class="lyrics-title">Lyrics</h2>
+        <div class="lyrics">Out in back of Applebee's There's a tired sun going down behind the trees And when my girlfriend's done at Lowe's Maybe we find a place to go
+But probably take the same old turn Head back home without a word We're both too tired for any fun Seems the day's gone 'fore it's begun
+But there's a vision I can't shake Of a voyage I've gotta take Can't say just where I'd go All I can say is that I know
+Something's not right Something's not right Something's not right, the way it looks from here
+Tomorrow's Independence Day What independence anyway My ex'll stop by with the kids and have a beer We'll have about fifteen people here
+And my brother with his guitar Still hoping he'll be a star Don't think he'll get too far And it's gonna hurt when he sees the way things are
+And the smoke from the grill still smells the same And everyone here knows my name Am I the only one missing the buzz Of the rough or the real or whatever else it was
+Something's not right Something's not right Something's not right, the way it looks from here
+Something's not right Something's not right Something's not right, and it's a quiet kind of fear
+My daughter's hair's a willow, shaking in the breeze And my son's first word's a whisper, whistling through the trees And if there's one thing that I won't do It's overlook the gifts that have come my way, that have come my way
+The party's over, everybody's gone There's an uneasy feeling keeping me stirring My girlfriend's dreaming the night away I kind of want to wake her but I don't know what I'd say
+Maybe I'll go out and take a drive Let the wind rush by me remind me I'm alive See the moon, get a midnight snack It's not that far to Walmart and back
+Another day and how I spent it Wish I could live as if I meant it It's not so bad, bit by bit But can it really be that this is it
+Something's not right Something's not right Something's not right, the way it looks from here
+Something's not right Something's not right Something's not right, and it's a quiet kind of fear
+Something's not right Something's not right Something's not right</div>
+    </div>
+
+    <div class="song-navigation">
+        <div class="nav-links">
+            <a href="selections-album.html" class="nav-link">Back to Album</a>
+            <a href="song-waltz-into-darkness.html" class="nav-link">Next Song →</a>
+        </div>
+    </div>
+</body>
+</html>

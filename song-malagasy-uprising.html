@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malagasy Uprising - Peter Kleinhans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --gray-light: #f5f5f5;
+            --gray-mid: #666666;
+            --accent: #2952a3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .back-link {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            text-decoration: none;
+            color: var(--black);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            z-index: 100;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .song-hero {
+            padding: 8rem 4rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .song-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .song-meta {
+            font-size: 1rem;
+            color: var(--gray-mid);
+            margin-bottom: 3rem;
+            letter-spacing: 0.1em;
+        }
+
+        .player-box {
+            background: var(--black);
+            padding: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        audio {
+            width: 100%;
+            height: 50px;
+        }
+
+        .video-section {
+            margin-bottom: 4rem;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-caption {
+            font-size: 0.9rem;
+            color: var(--gray-mid);
+            font-style: italic;
+        }
+
+        .lyrics-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .lyrics-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+            text-align: center;
+        }
+
+        .lyrics {
+            font-size: 1.1rem;
+            line-height: 2;
+            white-space: pre-line;
+            color: var(--black);
+        }
+
+        .song-navigation {
+            background: var(--gray-light);
+            padding: 3rem 4rem;
+            text-align: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--black);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--black);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .song-hero {
+                padding: 6rem 2rem 3rem;
+            }
+
+            .song-title {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="selections-album.html" class="back-link">← Back to Selections</a>
+
+    <div class="song-hero">
+        <h1 class="song-title">Malagasy Uprising</h1>
+        <p class="song-meta">From Selections (2026) · Track 02</p>
+
+        <div class="player-box">
+            <audio controls>
+                <source src="https://www.dropbox.com/scl/fi/y8892yqav7ix88lyf7vfi/Malagasy-Uprising.mp3?rlkey=3iyeju203djgumtcnkbpehtvb&dl=1" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <div class="video-section">
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/5m2AgEvi7CQ?rel=0" 
+                    title="Malagasy Uprising"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="video-caption">Official Video</p>
+        </div>
+    </div>
+
+    <div class="lyrics-section">
+        <p style="text-align: center; color: var(--gray-mid); font-size: 0.95rem; margin-bottom: 3rem; font-style: italic;">
+            Note: Audio player will be activated once MP3 files are uploaded to the web server.
+        </p>
+
+        <h2 class="lyrics-title">Lyrics</h2>
+        <div class="lyrics">I was born in Malagasy, it's an island I am told
+But I grew up in the highlands and I never saw the sea
+The French called it Madagascar and they made the place their own
+But it's the only place on earth I'll ever be.
+ 
+By 1947, the farmers had had too much
+In the Malagasy Uprising they stormed and killed twenty men
+But when the French had responded, and they were done and said
+There were over one-hundred thousand Malagasy dead
+ 
+The Malagasy Uprising, now seventy years old
+The Malagasy Uprising, I believe everything I'm told
+That if you try to push back, no matter what you try
+Your loved ones gonna die
+Your loved ones gonna die
+ 
+They burned my mother with a bomb, they through my sister from a plane
+The French proved very civilized with their terrorizing flame
+The farmers they rose up no more, they began their work at dawn
+And what had lived on in their spirits faded and was gone
+ 
+But years have passed and now at last I can grow rice on my land
+And Jacques Chirac apologized, a thief washing his hands
+And Malagasy still lives on, an island I am told
+But I still have never seen the sea and now I'm more than old
+ 
+I still live in a colony, strip-mined of its pride
+I still live at the mercy of a man I'll never see
+And I'll die here in Madagascar, the island where I hide
+And I'll die here in Madagascar, the only place I'll ever be
+ 
+The Malagasy Uprising, now seventy years old
+The Malagasy Uprising, I believe everything I'm told
+That if you try to push back, no matter what you try
+Your loved ones gonna die
+Your loved ones gonna die
+ 
+The Malagasy Uprising, now seventy years old
+The Malagasy Uprising, I believe everything I'm told
+That if you try to push back, no matter what you try
+Your loved ones gonna die
+Your loved ones gonna die</div>
+    </div>
+
+    <div class="song-navigation">
+        <div class="nav-links">
+            <a href="song-fomo.html" class="nav-link">← Previous Song</a>
+            <a href="selections-album.html" class="nav-link">Back to Album</a>
+            <a href="#" class="nav-link">Next Song →</a>
+        </div>
+    </div>
+</body>
+</html>

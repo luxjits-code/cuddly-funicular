@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Peter Kleinhans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --gray-light: #f5f5f5;
+            --gray-mid: #666666;
+            --accent: #2952a3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-mid);
+            margin-bottom: 3rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--black);
+            margin-bottom: 3rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--black);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 1rem 2rem;
+            border: 2px solid var(--black);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .accent-line {
+            width: 4px;
+            height: 100px;
+            background: var(--accent);
+            margin: 0 auto 3rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="accent-line"></div>
+        <h1>Contact</h1>
+        <p class="subtitle">Coming Soon</p>
+        <p class="message">
+            Contact information and booking inquiries will be available here soon. Check back shortly.
+        </p>
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+</body>
+</html>
