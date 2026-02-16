@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Peter Kleinhans</title>
+    <title>About Peter - Peter Kleinhans</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -26,50 +26,22 @@
             font-family: 'Work Sans', sans-serif;
             background: var(--white);
             color: var(--black);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 2rem;
-        }
-
-        .container {
-            max-width: 600px;
-            text-align: center;
-        }
-
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
-            letter-spacing: 0.1em;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--gray-mid);
-            margin-bottom: 3rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        .message {
-            font-size: 1.1rem;
             line-height: 1.8;
-            color: var(--black);
-            margin-bottom: 3rem;
         }
 
         .back-link {
-            display: inline-block;
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
             text-decoration: none;
             color: var(--black);
             font-size: 0.9rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            padding: 1rem 2rem;
+            z-index: 100;
+            padding: 0.75rem 1.5rem;
             border: 2px solid var(--black);
+            background: var(--white);
             transition: all 0.3s ease;
         }
 
@@ -78,29 +50,162 @@
             color: var(--white);
         }
 
-        .accent-line {
-            width: 4px;
-            height: 100px;
-            background: var(--accent);
-            margin: 0 auto 3rem;
+        .story-header {
+            padding: 8rem 4rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .story-header .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 4rem 6rem;
+        }
+
+        .story-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--black);
+        }
+
+        .story-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin: 4rem 0 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .pullquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            line-height: 1.5;
+            margin: 3rem 0;
+            padding: 2rem;
+            border-left: 4px solid var(--accent);
+            font-style: italic;
+            color: var(--gray-mid);
+        }
+
+        .highlight-section {
+            background: var(--gray-light);
+            padding: 3rem;
+            margin: 3rem 0;
+            border-radius: 4px;
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
+            .story-header {
+                padding: 6rem 2rem 3rem;
+            }
+
+            .story-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .story-content {
+                padding: 0 2rem 4rem;
+            }
+
+            .story-content p {
+                font-size: 1rem;
+            }
+
+            .story-content h2 {
+                font-size: 2rem;
+            }
+
+            .pullquote {
+                font-size: 1.4rem;
+                padding: 1.5rem;
+            }
+
+            .highlight-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .back-link {
+                position: static;
+                display: block;
+                width: fit-content;
+                margin: 2rem auto;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="accent-line"></div>
-        <h1>About</h1>
-        <p class="subtitle">Coming Soon</p>
-        <p class="message">
-            This page is currently being crafted. Check back soon to learn more about Peter's journey from the racetrack to the recording studio.
-        </p>
-        <a href="index.html" class="back-link">← Back to Home</a>
+    <a href="index.html" class="back-link">← Back to Home</a>
+
+    <div class="story-header">
+        <h1>The Full Story</h1>
+        <p class="subtitle">Renaissance Man</p>
+    </div>
+
+    <div class="story-content">
+        <p>Peter Kleinhans writes songs about what it means to be human. But his path to the microphone was anything but conventional—it wound through the racetrack, the courtroom, and the family business before arriving at the recording studio.</p>
+
+        <h2>From the Racetrack to the Recording Studio</h2>
+
+        <p>For thirty years, Peter lived and breathed harness racing. He called races from behind the microphone at tracks across America—The Meadows, Hoosier Park, The Meadowlands, Freehold, Oak Grove. He trained horses, drove them in amateur races, and even became part owner of three racetracks alongside Jeff Gural. Through it all, he was learning the art of storytelling, watching drama unfold in two-minute bursts around the oval.</p>
+
+        <p>His greatest champion was Enough Talk, a legitimate free-for-all trotter who earned nearly $2 million and took Peter to Sweden for the prestigious Elitloppet at Solvalla. The old horse now lives in retirement on Peter's small farm in Flemington, New Jersey—a 21-year-old reminder of dreams realized.</p>
+
+        <div class="pullquote">
+            "I was first challenged by the mathematics involved in trying to pick winners. I've been interested in trying to solve math puzzles all of my life."
+        </div>
+
+        <h2>The Mind</h2>
+
+        <p>Peter's formal education reads like a wanderer's résumé: Carnegie Mellon for creative writing and philosophy, University of Michigan for law school, and NYU where he passed the New York bar. He's a non-practicing lawyer who loved the law but couldn't find an area compelling enough to practice full-time. Instead, he brought his analytical mind to family real estate in Manhattan—a business built into an empire by his grandmother, whom he describes as "one of the greatest real estate entrepreneurs in the history of the City."</p>
+
+        <p>His diplomatic mind seeks understanding where others see conflict. His songwriter's heart finds poetry in the mundane. His artist's soul believes in music's power to connect us.</p>
+
+        <h2>The Music</h2>
+
+        <p>Peter's music is a pleasing blend of folk, pop, and rock—thoughtful lyrics delivered with warm, distinctive vocals. Critics have compared him to Dave Matthews and placed him in the protest tradition of Neil Young and Phil Ochs. His 2018 debut album, <em>Something's Not Right</em>, earned acclaim from LA Music Critic as "one of the best debut albums we have reviewed."</p>
+
+        <p>He doesn't just observe the world—he bears witness to it. Songs like "Something's Not Right" capture the unease rippling through America, the sense that despite official recoveries, average people feel less secure, less stable. Written three years before the 2016 election, the song wasn't political—it was human, documenting the anxiety he heard from friends across the heartland during his years calling races in Indiana, Michigan, Kentucky, and Pennsylvania.</p>
+
+        <div class="highlight-section">
+            <p><strong>On his songwriting:</strong> "What interested me was that feeling of unease, the sense of something-not-being-right, and how it emanated not just from economic forces but also from the impersonal face of what the nation was presenting its citizens."</p>
+        </div>
+
+        <p>He performs regularly at The Bitter End in Greenwich Village and The Winery, his guitar and voice weaving narrative threads through folk, pop, and rock in the tradition of Harry Chapin—songs that capture life's complexity with wit, warmth, and wisdom.</p>
+
+        <h2>The Track</h2>
+
+        <p>The harness racing world knows Peter as more than a musician. He's written for Hoof Beats magazine, profiling rising stars like 22-year-old driver Marvin Luna. He competes in amateur races at The Meadowlands, still honing his craft behind the reins. And he continues to call races when the opportunity arises, that same storyteller's instinct bringing drama to life lap by lap.</p>
+
+        <p>"Years as a harness racing professional taught Peter about drama, competition, and the narratives that drive us all," one writer observed. It's no accident that his music carries the same rhythmic urgency, the same attention to detail, the same understanding that every story has stakes.</p>
+
+        <h2>The Man</h2>
+
+        <p>Among his many talents, Peter believes his greatest to be as devoted father to his three children. He raises chickens, cattle, and lamb on his small farm in Flemington—"basically, only for our family and friends." He invests in real estate, owns racetracks, and continues to solve the mathematical puzzles that first drew him to handicapping horses as a six-year-old at Belmont Park.</p>
+
+        <div class="pullquote">
+            "I suppose you can say I'm somewhat of a wanderer. All my life I've tried to and usually succeeded at doing more than one thing at a time."
+        </div>
+
+        <p>There is probably nobody else in harness racing—perhaps in any sport—who juggles as many interests as Peter Kleinhans does. Songwriter, singer, guitar player, part owner of three racetracks, non-practicing lawyer, race caller, harness breeder, driver and trainer, writer, livestock farmer, and investor. A true renaissance man.</p>
+
+        <p>But through all of it runs a single thread: connection. His diplomatic soul seeks common ground where others see division. His music doesn't just tell stories—it creates bridges between people, finding the universal in the personal, the shared humanity in our different struggles. Whether calling a race, writing a song, or navigating complex conversations, Peter believes in our capacity to see beyond conflict toward understanding. In a world that often feels fragmented, his work reminds us that we're all part of the same story.</p>
     </div>
 </body>
 </html>
