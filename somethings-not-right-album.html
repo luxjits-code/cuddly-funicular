@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Something's Not Right - Peter Kleinhans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --gray-light: #f5f5f5;
+            --gray-mid: #666666;
+            --accent: #2952a3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .back-link {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            text-decoration: none;
+            color: var(--black);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            z-index: 100;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .album-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            padding: 6rem 4rem 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .album-cover-section img {
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #2952a3 0%, #1a3366 100%);
+            min-height: 400px;
+        }
+
+        .album-info h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .album-meta {
+            font-size: 1rem;
+            color: var(--gray-mid);
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+        }
+
+        .album-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            color: var(--gray-mid);
+        }
+
+        .tracklist {
+            list-style: none;
+        }
+
+        .track-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .track-number {
+            font-size: 0.9rem;
+            color: var(--gray-mid);
+            margin-right: 1rem;
+            min-width: 30px;
+        }
+
+        .track-title {
+            flex: 1;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .album-header {
+                grid-template-columns: 1fr;
+                padding: 4rem 2rem 2rem;
+            }
+
+            .album-info h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="listen.html" class="back-link">← Back to Albums</a>
+
+    <div class="album-header">
+        <div class="album-cover-section">
+            <img src="images/somethings-not-right.png" alt="Something's Not Right Album Cover">
+        </div>
+
+        <div class="album-info">
+            <h1>Something's Not Right</h1>
+            <p class="album-meta">2018 · 11 Songs</p>
+            <p class="album-description">
+                Peter Kleinhans' debut album explores themes of modern anxiety, suburban malaise, and the search for meaning in everyday life.
+            </p>
+
+            <ul class="tracklist">
+                <li class="track-item">
+                    <span class="track-number">01</span>
+                    <span class="track-title">3,000,000 Years</span>
+                </li>
+                <li class="track-item">
+                    <span class="track-number">02</span>
+                    <span class="track-title">A Separate Time</span>
+                </li>
+                <li class="track-item">
+                    <span class="track-number">03</span>
+                    <span class="track-title">Leaving Home</span>
+                </li>
+                <li class="track-item">
+                    <span class="track-number">04</span>
+                    <span class="track-title">To Hell and Back</span>
+                </li>
+                <li class="track-item">
+                    <span class="track-number">05</span>
+                    <span class="track-title">Something's Not Right</span>
+                </li>
+                <li class="track-item">
+                    <span class="track-number">06</span>
+                    <span class="track-title">Falling Apart</span>
+                </li>
+                <li class="track-item">
+                    <span class="track-number">07</span>
+                    <span class="track-title">Sky Blue</span>
+                </li>
+                <li class="track-item">
+                    <span class="track-number">08</span>
+                    <span class="track-title">'til the Music Stops</span>
+                </li>
+                <li class="track-item">
+                    <span class="track-number">09</span>
+                    <span class="track-title">Turn the Time</span>
+                </li>
+                <li class="track-item">
+                    <span class="track-number">10</span>
+                    <span class="track-title">Waltz into Darkness</span>
+                </li>
+                <li class="track-item">
+                    <span class="track-number">11</span>
+                    <span class="track-title">Halifax Harbor</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

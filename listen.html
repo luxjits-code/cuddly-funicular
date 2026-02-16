@@ -104,6 +104,7 @@
             margin-bottom: 1.5rem;
             box-shadow: 0 20px 60px rgba(0,0,0,0.2);
             transition: box-shadow 0.4s ease;
+            background: linear-gradient(135deg, #2952a3 0%, #1a3366 100%);
         }
 
         .album-card:hover .album-cover {
@@ -204,6 +205,26 @@
             color: var(--white);
         }
 
+        .back-link {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--black);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 1rem 2rem;
+            border: 2px solid var(--black);
+            transition: all 0.3s ease;
+            margin: 3rem auto;
+            display: block;
+            width: fit-content;
+        }
+
+        .back-link:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 3rem;
@@ -251,25 +272,23 @@
                     <p class="album-year">2025 · 11 Songs</p>
                 </div>
 
-                <!-- I Was Alive Enough - Coming Soon -->
-                <div class="album-card not-clickable" data-index="2">
+                <!-- I Was Alive Enough - CLICKABLE -->
+                <a href="i-was-alive-enough-album.html" class="album-card clickable" data-index="2">
                     <img src="images/i-was-alive-enough.png" alt="I Was Alive Enough Album Cover" class="album-cover">
                     <h2 class="album-title">
                         I Was Alive Enough
-                        <span class="coming-soon-badge">Coming Soon</span>
                     </h2>
                     <p class="album-year">2020 · 12 Songs</p>
-                </div>
+                </a>
 
-                <!-- Something's Not Right - Coming Soon -->
-                <div class="album-card not-clickable" data-index="3">
+                <!-- Something's Not Right - CLICKABLE -->
+                <a href="somethings-not-right-album.html" class="album-card clickable" data-index="3">
                     <img src="images/somethings-not-right.png" alt="Something's Not Right Album Cover" class="album-cover">
                     <h2 class="album-title">
                         Something's Not Right
-                        <span class="coming-soon-badge">Coming Soon</span>
                     </h2>
                     <p class="album-year">2018 · 11 Songs</p>
-                </div>
+                </a>
             </div>
 
             <div class="carousel-dots">
@@ -279,6 +298,8 @@
                 <div class="dot" onclick="scrollToAlbum(3)"></div>
             </div>
         </div>
+
+        <a href="index.html" class="back-link">← Back to Home</a>
     </div>
 
     <script>
