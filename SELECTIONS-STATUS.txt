@@ -1,0 +1,60 @@
+# SELECTIONS ALBUM - FINAL STEPS
+
+## ✅ COMPLETED (Ready to upload!)
+
+1. **FOMO** - Complete with Spotify player ✓
+2. **Malagasy Uprising** - Complete with Spotify player ✓
+3. **Something's Not Right** - Complete with Spotify, video, photo, lyrics ✓
+4. **Waltz into Darkness** - Complete with Spotify, video, photo, lyrics ✓
+5. **Dopamine** - Complete with Spotify and video (lyrics pending from Peter) ✓
+
+## ⚠️ NEEDS LYRICS (2 songs)
+
+6. **Hyperinflate** - Has Spotify + video, NEEDS LYRICS
+7. **Cassandra** - Has Spotify + video, NEEDS LYRICS
+
+## 📝 HOW TO ADD LYRICS
+
+### Option 1: Get from Peter's website
+1. Go to https://www.peterkleinhans.com/hyperinflate
+2. Copy all the lyrics
+3. Open `song-hyperinflate.html` in a text editor
+4. Find this line: `[LYRICS NEEDED - Get from peterkleinhans.com/hyperinflate]`
+5. Replace it with the copied lyrics
+6. Save the file
+
+Repeat for Cassandra at https://www.peterkleinhans.com/cassandra
+
+### Option 2: Wait for Peter
+If Peter wants to provide the lyrics himself, just upload everything as-is and add lyrics later.
+
+## 🎯 WHAT'S WORKING NOW
+
+- All 8 songs have Spotify players that play directly on the site ✓
+- 5 songs have videos ✓
+- 2 songs have photos (Something's Not Right, Waltz into Darkness) ✓
+- 6 songs have complete lyrics ✓
+- All pages are mobile-optimized ✓
+- Navigation works between all pages ✓
+
+## 📦 NEXT UPLOAD TO GITHUB
+
+Upload these files (they're all in the ZIP):
+- song-fomo.html
+- song-malagasy-uprising.html
+- song-hyperinflate.html
+- song-cassandra.html
+- song-somethings-not-right.html
+- song-perv-with-the-nerve.html  
+- song-waltz-into-darkness.html
+- song-dopamine.html
+
+## 🎵 FOR NEXT SESSION (Other Albums)
+
+Bring for each album:
+1. Spotify links for all songs
+2. Video embed codes (if available)
+3. Lyrics (text or links to pages with lyrics)
+4. Any photos
+
+We'll use this same template and replicate it quickly!

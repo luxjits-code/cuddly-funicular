@@ -38,10 +38,15 @@
             letter-spacing: 0.1em;
             text-transform: uppercase;
             z-index: 100;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--black);
+            background: var(--white);
+            transition: all 0.3s ease;
         }
 
         .back-link:hover {
-            color: var(--accent);
+            background: var(--black);
+            color: var(--white);
         }
 
         .song-hero {
@@ -49,10 +54,6 @@
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
         .song-title {
@@ -70,15 +71,69 @@
             letter-spacing: 0.1em;
         }
 
+        .song-photo {
+            margin: 0 auto 3rem;
+            max-width: 600px;
+        }
+
+        .song-photo img {
+            width: 100%;
+            height: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
         .player-box {
             background: var(--black);
             padding: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 4rem;
         }
 
-        audio {
+        .video-section {
+            margin-bottom: 4rem;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 50px;
+            height: 100%;
+        }
+
+        .video-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--gray-mid);
+            font-style: italic;
+        }
+
+        .lyrics-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .lyrics-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        .lyrics {
+            font-size: 1.1rem;
+            line-height: 2;
+            white-space: pre-line;
+            color: var(--black);
         }
 
         .song-navigation {
@@ -109,6 +164,35 @@
             background: var(--black);
             color: var(--white);
         }
+
+        @media (max-width: 768px) {
+            .song-title {
+                font-size: 3rem;
+            }
+
+            .song-hero {
+                padding: 6rem 2rem 3rem;
+            }
+
+            .lyrics-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .lyrics-title {
+                font-size: 2rem;
+            }
+
+            .lyrics {
+                font-size: 1rem;
+            }
+
+            .back-link {
+                position: static;
+                display: block;
+                width: fit-content;
+                margin: 2rem auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -119,11 +203,20 @@
         <p class="song-meta">From Selections (2026) · Track 04</p>
 
         <div class="player-box">
-            <audio controls>
-                <source src="https://www.dropbox.com/scl/fi/47ngf3xxvp2lyvfya6irx/03-Cassandra_mastered-12-19-2023_MP3.mp3?rlkey=whqx0mqos4ct6pfkwewkqqtr4&dl=1" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7rZ1YsSOikD6vPS6LDfRgw?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
+
+        <div class="video-section">
+            <div class="video-container">
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/elGcieFij8U" title="Cassandra" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <p class="video-caption">Official Music Video</p>
+        </div>
+    </div>
+
+    <div class="lyrics-section">
+        <h2 class="lyrics-title">Lyrics</h2>
+        <div class="lyrics">[LYRICS NEEDED - Get from peterkleinhans.com/cassandra]</div>
     </div>
 
     <div class="song-navigation">

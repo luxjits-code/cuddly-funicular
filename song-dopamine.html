@@ -15,16 +15,19 @@
             --gray-mid: #666666;
             --accent: #2952a3;
         }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Work Sans', sans-serif;
             background: var(--white);
             color: var(--black);
         }
+
         .back-link {
             position: fixed;
             top: 2rem;
@@ -35,20 +38,24 @@
             letter-spacing: 0.1em;
             text-transform: uppercase;
             z-index: 100;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--black);
+            background: var(--white);
+            transition: all 0.3s ease;
         }
+
         .back-link:hover {
-            color: var(--accent);
+            background: var(--black);
+            color: var(--white);
         }
+
         .song-hero {
             padding: 8rem 4rem 4rem;
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
+
         .song-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 5rem;
@@ -56,32 +63,92 @@
             margin-bottom: 1rem;
             letter-spacing: 0.05em;
         }
+
         .song-meta {
             font-size: 1rem;
             color: var(--gray-mid);
             margin-bottom: 3rem;
             letter-spacing: 0.1em;
         }
+
+        .song-photo {
+            margin: 0 auto 3rem;
+            max-width: 600px;
+        }
+
+        .song-photo img {
+            width: 100%;
+            height: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
         .player-box {
             background: var(--black);
             padding: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 4rem;
         }
-        audio {
+
+        .video-section {
+            margin-bottom: 4rem;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 50px;
+            height: 100%;
         }
+
+        .video-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--gray-mid);
+            font-style: italic;
+        }
+
+        .lyrics-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .lyrics-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        .lyrics {
+            font-size: 1.1rem;
+            line-height: 2;
+            white-space: pre-line;
+            color: var(--black);
+        }
+
         .song-navigation {
             background: var(--gray-light);
             padding: 3rem 4rem;
             text-align: center;
         }
+
         .nav-links {
             display: flex;
             gap: 2rem;
             justify-content: center;
             flex-wrap: wrap;
         }
+
         .nav-link {
             text-decoration: none;
             color: var(--black);
@@ -92,40 +159,137 @@
             border: 1px solid var(--black);
             transition: all 0.3s ease;
         }
+
         .nav-link:hover {
             background: var(--black);
             color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .song-title {
+                font-size: 3rem;
+            }
+
+            .song-hero {
+                padding: 6rem 2rem 3rem;
+            }
+
+            .lyrics-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .lyrics-title {
+                font-size: 2rem;
+            }
+
+            .lyrics {
+                font-size: 1rem;
+            }
+
+            .back-link {
+                position: static;
+                display: block;
+                width: fit-content;
+                margin: 2rem auto;
+            }
         }
     </style>
 </head>
 <body>
     <a href="selections-album.html" class="back-link">← Back to Selections</a>
+
     <div class="song-hero">
         <h1 class="song-title">Dopamine</h1>
-        <p class="song-meta">From Selections (2026) · Track 08</p>
+        <p class="song-meta">From Selections (2026) · Track 07</p>
+
+        <div class="player-box">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5hIBDSbGE2vahCal9aBE3A?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
         <div class="video-section">
             <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/nVfqDEUOFpE?rel=0" 
-                    title="Dopamine"
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/gCzNwwCTTrE" title="Dopamine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-            <p class="video-caption">Official Video</p>
+            <p class="video-caption">Official Music Video</p>
         </div>
     </div>
 
-    <div class="song-hero" style="padding-top: 2rem;">
-        <div class="player-box">
-            <audio controls>
-                <source src="https://www.dropbox.com/scl/fi/00tzgxizcnnq6aaexrryp/11-Dopamine_mastered-12-19-2023_MP3.mp3?rlkey=2rhth780s6zn34k1xc6tg2kan&dl=1" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
+    <div class="lyrics-section">
+        <h2 class="lyrics-title">Lyrics</h2>
+        <div class="lyrics">I'll walk, with roses, 100,000 miles for you
+I'll write a poem, tears in my eyes, just to sight a glimpse of you
+I'll spend an hour to choose the best flower to fit the mood I see in you
+I'll take my love of the day and throw it away just to try to cast a net for you
+
+But is it you or myself that I'm embracing
+Or is the truth that I'm just out chasing
+Dopamine
+Dopamine
+Dopamine
+Dopamine
+
+I'll pay a call, I'll trip and fall in my desperate rush to run to you
+I'll risk it all, scale any wall as I creep and climb to get to you
+I'll set my heart thumping, ever battle means something in my quest to test my hope on you
+I'll keep on bumping, finding and dumping as I set my scope on you
+
+But is it you or myself that I'm embracing
+Or is the truth that I'm just out chasing
+Dopamine
+Dopamine
+Dopamine
+Dopamine
+
+Behind the wheel of every fast car
+Slumped over in the corner of the corner bar
+You're right there in the crazy killer's grin
+You're down with the celibate worshipping sin
+
+So is it the world or myself that I'm embracing
+Or is the truth that I'm just out chasing
+Dopamine
+Dopamine
+Dopamine
+Dopamine
+
+Fuck it- I'm doing it
+If it's fucking stupid, well I'm still doing it
+I don't care how irrational it sounds
+Maybe I'll do it on just those grounds
+
+And you don't have the same name that I thought
+And you're not the number on that ticket that I bought
+Every time a different idol every time a different story
+Every drug, every romance a token to your glory
+
+Dopamine
+Dopamine
+Dopamine
+Dopamine
+
+You're the reason I'll always be alone
+You're the reason I can't put down my phone
+You're the reason I lift myself from bed each day
+You're the reason I can't just stay
+
+But who are you, which way are you facing
+I can't tell, I'm just out chasing
+Dopamine
+Dopamine
+Dopamine
+Dopamine
+
+The address of the porn site set as my go to
+The spaghetti I should know to say no to
+I'm too smart to deny you exist
+But I'm too weak to ever resist you
+
+Dopamine
+Dopamine
+Dopamine
+Dopamine</div>
     </div>
+
     <div class="song-navigation">
         <div class="nav-links">
             <a href="selections-album.html" class="nav-link">Back to Album</a>
