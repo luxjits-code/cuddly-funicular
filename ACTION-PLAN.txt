@@ -1,0 +1,92 @@
+# PETER KLEINHANS WEBSITE - GO LIVE ACTION PLAN
+
+## PHASE 1: IMMEDIATE FIXES (Need info from you)
+
+### Homepage Buttons
+1. **"Listen on Spotify" button** 
+   - Currently goes to: listen.html
+   - Should go to: [NEED SPOTIFY ARTIST PAGE URL]
+   
+2. **"Press Kit" button**
+   - Currently goes to: contact.html
+   - Options:
+     a) Link to downloadable press kit PDF (do you have one?)
+     b) Link to new press.html page
+     c) Link to contact page with "For press kit requests" text
+
+### Navigation Updates
+3. **Add "Press" to main navigation**
+   - Created press.html template
+   - Need to update nav on ALL pages to include Press link
+   - Currently "Press" in nav goes to Contact
+
+4. **Footer cleanup**
+   - ✅ Removed mailing list references
+   - ✅ Cleaned up footer text
+
+---
+
+## PHASE 2: COMPLETE SELECTIONS ALBUM
+
+### Still Need:
+- Hyperinflate lyrics (from peterkleinhans.com/hyperinflate)
+- Cassandra lyrics (from peterkleinhans.com/cassandra)
+
+### Already Done:
+- ✅ All 8 songs have Spotify players
+- ✅ All 8 songs have videos  
+- ✅ 2 songs have photos
+- ✅ 7 songs have complete lyrics
+- ✅ Dopamine video working
+- ✅ Previous/Next navigation
+
+---
+
+## PHASE 3: BUILD OTHER 3 ALBUMS (Next Session)
+
+For each album, bring:
+1. **Spotify links** for all songs
+2. **Video embed codes** (if available)
+3. **Lyrics** (text or links)
+4. **Photos** (if any specific to songs)
+
+### Album 1: Something's Not Right (2018)
+- 11 songs
+- Album cover: already uploaded ✅
+
+### Album 2: I Was Alive Enough (2020)
+- 12 songs  
+- Album cover: already uploaded ✅
+
+### Album 3: By Every Probability (2025)
+- 11 songs
+- Album cover: already uploaded ✅
+
+---
+
+## PHASE 4: CONTENT PAGES
+
+### Press Page
+- Created template in press.html
+- You said you'll compile list of press links
+- Template has one example (Harness Racing Update article)
+- Just need to fill in more press items
+
+### Contact Page
+- Currently placeholder
+- Needs actual contact info or contact form
+
+### Shows Page  
+- Currently placeholder
+- Needs upcoming show dates or "No upcoming shows" message
+
+---
+
+## WHAT I NEED FROM YOU NOW:
+
+1. **Peter's Spotify artist page URL**
+2. **Press kit** - Do you have a PDF? Or should button go to Press page?
+3. **Press links** - List of articles/reviews to feature on press.html
+4. **Confirm**: Should I update ALL navigation to include separate Press link?
+
+Once I have these, I can finish Phase 1 and you'll have a complete, working site ready to show Peter!

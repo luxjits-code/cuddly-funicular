@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press - Peter Kleinhans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --gray-light: #f5f5f5;
+            --gray-mid: #666666;
+            --accent: #2952a3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 4rem 4rem;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .press-intro {
+            font-size: 1.1rem;
+            color: var(--gray-mid);
+            margin-bottom: 4rem;
+            max-width: 700px;
+        }
+
+        .press-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .press-item {
+            border: 1px solid #e0e0e0;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .press-item:hover {
+            border-color: var(--accent);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .press-item h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .press-meta {
+            font-size: 0.85rem;
+            color: var(--gray-mid);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .press-excerpt {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .press-link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .press-link:hover {
+            color: var(--black);
+            border-color: var(--black);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 6rem 2rem 3rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .press-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav style="position: fixed; top: 0; left: 0; right: 0; background: white; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0f0f0; font-family: 'Work Sans', sans-serif;">
+        <div style="font-size: 0.85rem; letter-spacing: 0.15em; font-weight: 600;"><a href="index.html" style="text-decoration: none; color: #0a0a0a;">PETER KLEINHANS</a></div>
+        <ul style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;">
+            <li><a href="listen.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Listen</a></li>
+            <li><a href="shows.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Shows</a></li>
+            <li><a href="about.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Story</a></li>
+            <li><a href="press.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Press</a></li>
+            <li><a href="contact.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <style>
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.75rem 1rem !important;
+                flex-wrap: wrap;
+            }
+            nav div {
+                font-size: 0.7rem !important;
+                margin-bottom: 0.5rem;
+                width: 100%;
+                text-align: center;
+            }
+            nav ul {
+                width: 100%;
+                justify-content: center;
+                gap: 0.75rem !important;
+            }
+            nav ul li a {
+                font-size: 0.55rem !important;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <h1>Press</h1>
+        <p class="press-intro">
+            Press coverage and reviews of Peter Kleinhans' music, performances, and career across harness racing and songwriting.
+        </p>
+
+        <div class="press-grid">
+            <div class="press-item">
+                <h3>Harness Racing's Renaissance Man</h3>
+                <div class="press-meta">Harness Racing Update · October 2024</div>
+                <p class="press-excerpt">
+                    Among a host of interests, Peter Kleinhans is a songwriter, singer, guitar player, part owner of three racetracks, non-practicing lawyer, race caller, harness breeder, driver and trainer, writer, livestock farmer and investor. A profile of his multifaceted career.
+                </p>
+                <a href="https://harnessracingupdate.com/2024/10/20/peter-kleinhans-is-harness-racings-renaissance-man-2/" target="_blank" class="press-link">Read Article →</a>
+            </div>
+
+            <div class="press-item">
+                <h3>Album Review: "By Every Probability"</h3>
+                <div class="press-meta">Klef Notes · December 2025</div>
+                <p class="press-excerpt">
+                    A soundtrack for being human. Peter Kleinhans' latest album explores probability, fate, and the choices that define us with his signature blend of folk, pop, and rock storytelling.
+                </p>
+                <a href="https://klefnotes.com/music-features/blog/7676351/album-review-peter-kleinhans-by-every-probability-a-soundtrack-for-being-human" target="_blank" class="press-link">Read Review →</a>
+            </div>
+
+            <div class="press-item">
+                <h3>Album Review: "Something's Not Right"</h3>
+                <div class="press-meta">Klef Notes · 2018</div>
+                <p class="press-excerpt">
+                    Peter Kleinhans' debut album receives critical acclaim for its thoughtful songwriting and distinctive vocal delivery, establishing him as a compelling new voice in the singer-songwriter tradition.
+                </p>
+                <a href="https://klefnotes.com/blogs/music-reviews/posts/6053558/peter-kleinhans-something-s-not-right" target="_blank" class="press-link">Read Review →</a>
+            </div>
+
+            <div class="press-item">
+                <h3>New Video for "Something's Not Right"</h3>
+                <div class="press-meta">Eclectic Music Lover · November 2019</div>
+                <p class="press-excerpt">
+                    "One of the best debut albums we have reviewed," says LA Music Critic. Peter releases a brilliant and compelling music video that brings his powerful lyrics about American uncertainty to life through an entertaining yet troubling narrative.
+                </p>
+                <a href="https://eclecticmusiclover.com/2019/11/30/peter-kleinhans-releases-new-video-for-somethings-not-right/" target="_blank" class="press-link">Read Article →</a>
+            </div>
+
+            <div class="press-item">
+                <h3>EP Review: Peter Kleinhans</h3>
+                <div class="press-meta">Klef Notes</div>
+                <p class="press-excerpt">
+                    An in-depth review of Peter Kleinhans' EP showcasing his narrative songwriting style and distinctive musical voice that blends folk, pop, and rock influences.
+                </p>
+                <a href="https://klefnotes.com/blogs/music-reviews/posts/6623425/ep-review-peter-kleinhans" target="_blank" class="press-link">Read Review →</a>
+            </div>
+
+            <div class="press-item">
+                <h3>A Chat with Peter Kleinhans</h3>
+                <div class="press-meta">The Other Side Reviews · March 2021</div>
+                <p class="press-excerpt">
+                    An intimate conversation with Peter Kleinhans about his music, his unique path from harness racing to songwriting, and the stories behind his songs.
+                </p>
+                <a href="https://www.theothersidereviews.com/a-chat-with-peter-kleinhans-03-05-2021/" target="_blank" class="press-link">Read Interview →</a>
+            </div>
+
+            <div class="press-item">
+                <h3>Guest Post: The Ghost of Graffiti Past</h3>
+                <div class="press-meta">Eclectic Music Lover · October 2018</div>
+                <p class="press-excerpt">
+                    Peter writes a fascinating piece about his song "91st Street" and the allure of the 91st Street subway station in New York City, exploring urban memory and change.
+                </p>
+                <a href="https://eclecticmusiclover.com/2018/10/16/guest-post-the-ghost-of-graffiti-past-and-the-allure-of-the-91st-street-subway-station-by-peter-kleinhans/" target="_blank" class="press-link">Read Article →</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
