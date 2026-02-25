@@ -15,171 +15,101 @@
             --gray-mid: #666666;
             --accent: #2952a3;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Work Sans', sans-serif;
-            background: var(--white);
-            color: var(--black);
-        }
-
-        .back-link {
-            position: fixed;
-            top: 2rem;
-            left: 2rem;
-            text-decoration: none;
-            color: var(--black);
-            font-size: 0.9rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            z-index: 100;
-        }
-
-        .back-link:hover {
-            color: var(--accent);
-        }
-
-        .album-header {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            padding: 6rem 4rem 4rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .album-cover-section img {
-            width: 100%;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-            background: linear-gradient(135deg, #2952a3 0%, #1a3366 100%);
-            min-height: 400px;
-        }
-
-        .album-info h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
-        }
-
-        .album-meta {
-            font-size: 1rem;
-            color: var(--gray-mid);
-            margin-bottom: 2rem;
-            letter-spacing: 0.1em;
-        }
-
-        .album-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 3rem;
-            color: var(--gray-mid);
-        }
-
-        .tracklist {
-            list-style: none;
-        }
-
-        .track-item {
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .track-number {
-            font-size: 0.9rem;
-            color: var(--gray-mid);
-            margin-right: 1rem;
-            min-width: 30px;
-        }
-
-        .track-title {
-            flex: 1;
-            font-size: 1.1rem;
-            font-weight: 300;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Work Sans', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 8rem 2rem 4rem; }
+        .album-header { text-align: center; margin-bottom: 4rem; }
+        .album-cover { max-width: 500px; margin: 0 auto 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .album-cover img { width: 100%; height: auto; display: block; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; margin-bottom: 0.5rem; }
+        .album-info { color: var(--gray-mid); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2rem; }
+        .tracklist { max-width: 700px; margin: 0 auto; }
+        .track { display: flex; align-items: center; padding: 1.5rem; border-bottom: 1px solid var(--gray-light); transition: all 0.3s ease; text-decoration: none; color: var(--black); }
+        .track:hover { background: var(--gray-light); }
+        .track-number { font-size: 0.85rem; color: var(--gray-mid); width: 3rem; }
+        .track-title { flex: 1; font-size: 1.1rem; }
         @media (max-width: 768px) {
-            .album-header {
-                grid-template-columns: 1fr;
-                padding: 4rem 2rem 2rem;
-            }
-
-            .album-info h1 {
-                font-size: 2.5rem;
-            }
+            .container { padding: 6rem 1.5rem 3rem; }
+            h1 { font-size: 2.5rem; }
+            .track-title { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
-    <a href="listen.html" class="back-link">← Back to Albums</a>
+    <nav style="position: fixed; top: 0; left: 0; right: 0; background: white; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0f0f0; font-family: 'Work Sans', sans-serif;">
+        <div style="font-size: 0.85rem; letter-spacing: 0.15em; font-weight: 600;"><a href="index.html" style="text-decoration: none; color: #0a0a0a;">PETER KLEINHANS</a></div>
+        <ul style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;">
+            <li><a href="listen.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Listen</a></li>
+            <li><a href="shows.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Shows</a></li>
+            <li><a href="about.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Story</a></li>
+            <li><a href="press.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Press</a></li>
+            <li><a href="contact.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <style>
+        @media (max-width: 768px) {
+            nav { padding: 0.75rem 1rem !important; flex-wrap: wrap; }
+            nav div { font-size: 0.7rem !important; margin-bottom: 0.5rem; width: 100%; text-align: center; }
+            nav ul { width: 100%; justify-content: center; gap: 0.6rem !important; }
+            nav ul li a { font-size: 0.52rem !important; }
+        }
+    </style>
 
-    <div class="album-header">
-        <div class="album-cover-section">
-            <img src="images/somethings-not-right.jpg" alt="Something's Not Right Album Cover">
+    <div class="container">
+        <div class="album-header">
+            <div class="album-cover">
+                <img src="images/somethings-not-right.jpg" alt="Something's Not Right">
+            </div>
+            <h1>Something's Not Right</h1>
+            <div class="album-info">2018 · 11 Songs</div>
         </div>
 
-        <div class="album-info">
-            <h1>Something's Not Right</h1>
-            <p class="album-meta">2018 · 11 Songs</p>
-            <p class="album-description">
-                Peter Kleinhans' debut album explores themes of modern anxiety, suburban malaise, and the search for meaning in everyday life.
-            </p>
-
-            <ul class="tracklist">
-                <li class="track-item">
-                    <span class="track-number">01</span>
-                    <span class="track-title">3,000,000 Years</span>
-                </li>
-                <li class="track-item">
-                    <span class="track-number">02</span>
-                    <span class="track-title">A Separate Time</span>
-                </li>
-                <li class="track-item">
-                    <span class="track-number">03</span>
-                    <span class="track-title">Leaving Home</span>
-                </li>
-                <li class="track-item">
-                    <span class="track-number">04</span>
-                    <span class="track-title">To Hell and Back</span>
-                </li>
-                <li class="track-item">
-                    <span class="track-number">05</span>
-                    <span class="track-title">Something's Not Right</span>
-                </li>
-                <li class="track-item">
-                    <span class="track-number">06</span>
-                    <span class="track-title">Falling Apart</span>
-                </li>
-                <li class="track-item">
-                    <span class="track-number">07</span>
-                    <span class="track-title">Sky Blue</span>
-                </li>
-                <li class="track-item">
-                    <span class="track-number">08</span>
-                    <span class="track-title">'til the Music Stops</span>
-                </li>
-                <li class="track-item">
-                    <span class="track-number">09</span>
-                    <span class="track-title">Turn the Time</span>
-                </li>
-                <li class="track-item">
-                    <span class="track-number">10</span>
-                    <span class="track-title">Waltz into Darkness</span>
-                </li>
-                <li class="track-item">
-                    <span class="track-number">11</span>
-                    <span class="track-title">Halifax Harbor</span>
-                </li>
-            </ul>
+        <div class="tracklist">
+            <a href="song-3000000-years.html" class="track">
+                <div class="track-number">01</div>
+                <div class="track-title">3,000,000 Years</div>
+            </a>
+            <a href="song-a-separate-time.html" class="track">
+                <div class="track-number">02</div>
+                <div class="track-title">A Separate Time</div>
+            </a>
+            <a href="song-leaving-home.html" class="track">
+                <div class="track-number">03</div>
+                <div class="track-title">Leaving Home</div>
+            </a>
+            <a href="song-to-hell-and-back.html" class="track">
+                <div class="track-number">04</div>
+                <div class="track-title">To Hell And Back</div>
+            </a>
+            <a href="song-snr-album.html" class="track">
+                <div class="track-number">05</div>
+                <div class="track-title">Something's Not Right</div>
+            </a>
+            <a href="song-falling-apart.html" class="track">
+                <div class="track-number">06</div>
+                <div class="track-title">Falling Apart</div>
+            </a>
+            <a href="song-sky-blue.html" class="track">
+                <div class="track-number">07</div>
+                <div class="track-title">Sky Blue</div>
+            </a>
+            <a href="song-til-the-music-stops.html" class="track">
+                <div class="track-number">08</div>
+                <div class="track-title">'Til The Music Stops</div>
+            </a>
+            <a href="song-turn-the-tide.html" class="track">
+                <div class="track-number">09</div>
+                <div class="track-title">Turn The Tide</div>
+            </a>
+            <a href="song-waltz-into-darkness-album.html" class="track">
+                <div class="track-number">10</div>
+                <div class="track-title">Waltz into Darkness</div>
+            </a>
+            <a href="song-halifax-harbor.html" class="track">
+                <div class="track-number">11</div>
+                <div class="track-title">Halifax Harbor</div>
+            </a>
         </div>
     </div>
 </body>
