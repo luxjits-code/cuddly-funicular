@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turn The Tide - Peter Kleinhans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --gray-light: #f5f5f5;
+            --gray-mid: #666666;
+            --accent: #2952a3;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Work Sans', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 8rem 2rem 4rem; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; margin-bottom: 1rem; }
+        .track-info { color: var(--gray-mid); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3rem; }
+        .spotify-player { margin: 3rem 0; }
+        .video-container { margin: 3rem 0; }
+        .song-photo { margin: 3rem 0; text-align: center; }
+        .song-photo img { max-width: 100%; height: auto; }
+        .lyrics { font-size: 1.05rem; line-height: 1.8; white-space: pre-wrap; margin: 3rem 0; }
+        .song-nav { display: flex; justify-content: space-between; margin: 4rem 0 2rem; padding-top: 2rem; border-top: 1px solid var(--gray-light); }
+        .nav-button { display: inline-block; padding: 0.75rem 1.5rem; background: var(--black); color: var(--white); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s ease; }
+        .nav-button:hover { background: var(--accent); }
+        .nav-button.disabled { opacity: 0.3; pointer-events: none; }
+        @media (max-width: 768px) {
+            .container { padding: 6rem 1.5rem 3rem; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav style="position: fixed; top: 0; left: 0; right: 0; background: white; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0f0f0; font-family: 'Work Sans', sans-serif;">
+        <div style="font-size: 0.85rem; letter-spacing: 0.15em; font-weight: 600;"><a href="index.html" style="text-decoration: none; color: #0a0a0a;">PETER KLEINHANS</a></div>
+        <ul style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;">
+            <li><a href="listen.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Listen</a></li>
+            <li><a href="shows.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Shows</a></li>
+            <li><a href="about.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Story</a></li>
+            <li><a href="press.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Press</a></li>
+            <li><a href="contact.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <style>
+        @media (max-width: 768px) {
+            nav { padding: 0.75rem 1rem !important; flex-wrap: wrap; }
+            nav div { font-size: 0.7rem !important; margin-bottom: 0.5rem; width: 100%; text-align: center; }
+            nav ul { width: 100%; justify-content: center; gap: 0.6rem !important; }
+            nav ul li a { font-size: 0.52rem !important; }
+        }
+    </style>
+
+    <div class="container">
+        <h1>Turn The Tide</h1>
+        <div class="track-info">Track 09 · Something's Not Right (2018)</div>
+
+        <div class="spotify-player">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/70ivV1J3LZpMMRLR9xXI1W?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        
+
+        <div class="song-photo">
+            <img src="https://images.squarespace-cdn.com/content/v1/644eb517833daf75da4c9e53/73a20bf1-75b9-44fc-9ab3-4611883e4a11/TurntheTide.jpeg" alt="Turn The Tide">
+        </div>
+
+        <div class="lyrics">It's time to turn the tide, time to trim the tree
+Time to send a beam to light the darkness hiding inside of me
+And baby, when's the last time
+we've felt a stillness deep inside
+It's time to trim the tree, time to turn the tide
+We're busy almost every single second,
+but we never seem to get things done
+We've become perfect strangers
+to the sight of a simple moon or a simple sun
+It's time to let our eyes adjust to darkness
+so they remember how to see
+It's time to turn the tide, time to trim the tree
+
+And if you feel there's been something lost
+I'd hope that you'd tell me despite the cost
+And should we spend our best years half-alone and scared
+Dragging the weight of all that we've never shared
+
+It's time to turn the tide, time to trim the tree
+Time to become something different from
+who we'd have thought we'd ever be
+And who says we're not just getting started
+on this crazy roller coaster ride
+It's time to trim the tree, time to turn the tide
+
+Take the heights from the mountains,
+take the depths from the sea
+Bring them all back home, turn the tide, trim the tree
+Let the saltwater flow in these tears that we've cried
+Let the waves crash down, trim the tree, turn the tide
+(I'm the sum of everything I've chosen
+Thanks for holding the door for me when it was closing)
+(4x)
+
+There's a hint of fall in the air
+There's a touch of grey in your hair
+Hold my hand as the colors change
+Step into the forest so deep and strange
+
+It's time to turn the tide, time to trim the tree
+Watching the hands of the clock or the clasp of a lock
+won't slow the time or set us free
+This is the only world we'll ever know
+Let's live it and let's love it with our eyes open wide
+It's time to trim the tree, time to turn the tide
+
+Take the heights from the mountains,
+take the depths from the sea
+Bring them all back home, turn the tide, trim the tree
+Let the saltwater flow in these tears that we've cried
+Let the waves crash down, trim the tree, turn the tide
+(We're the sum of everything we've chosen
+We'll find a way through this door as it's closing)
+(2x)
+
+I think I can put up with you, just keep up with me
+Trim the tree
+And let me take your weary hand, my still blushing bride
+Turn the tide</div>
+
+        <div class="song-nav">
+            <a href="song-til-the-music-stops.html" class="nav-button ">← Previous Track</a>
+            <a href="somethings-not-right-album.html" class="nav-button">Back to Album</a>
+            <a href="song-waltz-into-darkness-album.html" class="nav-button ">Next Track →</a>
+        </div>
+    </div>
+</body>
+</html>

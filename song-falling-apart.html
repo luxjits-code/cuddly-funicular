@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Apart - Peter Kleinhans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --gray-light: #f5f5f5;
+            --gray-mid: #666666;
+            --accent: #2952a3;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Work Sans', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 8rem 2rem 4rem; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; margin-bottom: 1rem; }
+        .track-info { color: var(--gray-mid); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3rem; }
+        .spotify-player { margin: 3rem 0; }
+        .video-container { margin: 3rem 0; }
+        .song-photo { margin: 3rem 0; text-align: center; }
+        .song-photo img { max-width: 100%; height: auto; }
+        .lyrics { font-size: 1.05rem; line-height: 1.8; white-space: pre-wrap; margin: 3rem 0; }
+        .song-nav { display: flex; justify-content: space-between; margin: 4rem 0 2rem; padding-top: 2rem; border-top: 1px solid var(--gray-light); }
+        .nav-button { display: inline-block; padding: 0.75rem 1.5rem; background: var(--black); color: var(--white); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s ease; }
+        .nav-button:hover { background: var(--accent); }
+        .nav-button.disabled { opacity: 0.3; pointer-events: none; }
+        @media (max-width: 768px) {
+            .container { padding: 6rem 1.5rem 3rem; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav style="position: fixed; top: 0; left: 0; right: 0; background: white; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0f0f0; font-family: 'Work Sans', sans-serif;">
+        <div style="font-size: 0.85rem; letter-spacing: 0.15em; font-weight: 600;"><a href="index.html" style="text-decoration: none; color: #0a0a0a;">PETER KLEINHANS</a></div>
+        <ul style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;">
+            <li><a href="listen.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Listen</a></li>
+            <li><a href="shows.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Shows</a></li>
+            <li><a href="about.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Story</a></li>
+            <li><a href="press.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Press</a></li>
+            <li><a href="contact.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <style>
+        @media (max-width: 768px) {
+            nav { padding: 0.75rem 1rem !important; flex-wrap: wrap; }
+            nav div { font-size: 0.7rem !important; margin-bottom: 0.5rem; width: 100%; text-align: center; }
+            nav ul { width: 100%; justify-content: center; gap: 0.6rem !important; }
+            nav ul li a { font-size: 0.52rem !important; }
+        }
+    </style>
+
+    <div class="container">
+        <h1>Falling Apart</h1>
+        <div class="track-info">Track 06 · Something's Not Right (2018)</div>
+
+        <div class="spotify-player">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3A2lQhK7AuLWJnKVTWc7BX?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <div class="video-container"><iframe width="100%" height="500" src="https://www.youtube.com/embed/QELrD8NtM04" frameborder="0" allowfullscreen></iframe></div>
+
+        <div class="song-photo">
+            <img src="https://images.squarespace-cdn.com/content/v1/644eb517833daf75da4c9e53/55cdc067-1a8d-4bfa-894e-8cffefddd38e/FallingApart.jpeg" alt="Falling Apart">
+        </div>
+
+        <div class="lyrics">Can't you hear the rumble from underground
+Can't you hear the hum from up above
+Don't you hear the whisper on the street
+Don't it shake you sometimes when you hear the heat
+
+It's just the sound of everything falling
+It's just the sound of everything falling
+It's just the sound of everything falling apart
+
+Commit the crime, you're free to stay,
+blow the whistle better run away
+Should I censor what I say, it's recorded by the NSA
+But don't you feel so much safer
+with Big Brother on the phone
+And don't you love never being alone
+
+There's a ringing that never leaves my ears
+It's at a pitch that's tuned in to my fears
+To distracted to think, too awake to sleep
+Yes it shakes me sometimes when I hear the heat
+
+It's just the sound of everything falling
+It's just the sound of everything falling
+It's just the sound of everything falling apart
+
+How do you turn off the toys, how do you tune out the noise
+Of Taylor and Caitlyn and Kanye and Kim
+And let your mind wander and let your mind swim
+Below the shiny surface of what they try to call the news
+Beneath the sheltered island of what
+you think you've got to lose, so
+Take a look around
+Take a look around
+Tell me if we're waking up
+Tell me if we're lying down
+Tell me who we're up against
+Tell me who we're fighting for
+And tell me why there's a SWAT team at my door
+
+What good's a vote when both sides have been bought
+What good is hope when it only keeps you caught
+Somewhere between where you are
+and where they say you're supposed to be
+No matter who you are, it's gonna shake you
+when you hear the heat
+
+It's just the sound of everything falling
+It's just the sound of everything falling
+It's just the sound of everything falling apart
+I think I'd better find somewhere new to run
+I think I'd better learn how to shoot this gun
+I used to think I could find some comfort in the crowd
+But this cacophony, it's just too damn loud
+
+It's just the sound of everything falling
+It's just the sound of everything falling
+It's just the sound of everything falling apart
+
+It's just the sound of everything falling
+It's just the sound of everything falling
+It's just the sound of everything falling apart</div>
+
+        <div class="song-nav">
+            <a href="song-snr-album.html" class="nav-button ">← Previous Track</a>
+            <a href="somethings-not-right-album.html" class="nav-button">Back to Album</a>
+            <a href="song-sky-blue.html" class="nav-button ">Next Track →</a>
+        </div>
+    </div>
+</body>
+</html>

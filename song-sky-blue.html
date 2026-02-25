@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Blue - Peter Kleinhans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --gray-light: #f5f5f5;
+            --gray-mid: #666666;
+            --accent: #2952a3;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Work Sans', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 8rem 2rem 4rem; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; margin-bottom: 1rem; }
+        .track-info { color: var(--gray-mid); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3rem; }
+        .spotify-player { margin: 3rem 0; }
+        .video-container { margin: 3rem 0; }
+        .song-photo { margin: 3rem 0; text-align: center; }
+        .song-photo img { max-width: 100%; height: auto; }
+        .lyrics { font-size: 1.05rem; line-height: 1.8; white-space: pre-wrap; margin: 3rem 0; }
+        .song-nav { display: flex; justify-content: space-between; margin: 4rem 0 2rem; padding-top: 2rem; border-top: 1px solid var(--gray-light); }
+        .nav-button { display: inline-block; padding: 0.75rem 1.5rem; background: var(--black); color: var(--white); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s ease; }
+        .nav-button:hover { background: var(--accent); }
+        .nav-button.disabled { opacity: 0.3; pointer-events: none; }
+        @media (max-width: 768px) {
+            .container { padding: 6rem 1.5rem 3rem; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav style="position: fixed; top: 0; left: 0; right: 0; background: white; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0f0f0; font-family: 'Work Sans', sans-serif;">
+        <div style="font-size: 0.85rem; letter-spacing: 0.15em; font-weight: 600;"><a href="index.html" style="text-decoration: none; color: #0a0a0a;">PETER KLEINHANS</a></div>
+        <ul style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;">
+            <li><a href="listen.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Listen</a></li>
+            <li><a href="shows.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Shows</a></li>
+            <li><a href="about.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Story</a></li>
+            <li><a href="press.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Press</a></li>
+            <li><a href="contact.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <style>
+        @media (max-width: 768px) {
+            nav { padding: 0.75rem 1rem !important; flex-wrap: wrap; }
+            nav div { font-size: 0.7rem !important; margin-bottom: 0.5rem; width: 100%; text-align: center; }
+            nav ul { width: 100%; justify-content: center; gap: 0.6rem !important; }
+            nav ul li a { font-size: 0.52rem !important; }
+        }
+    </style>
+
+    <div class="container">
+        <h1>Sky Blue</h1>
+        <div class="track-info">Track 07 · Something's Not Right (2018)</div>
+
+        <div class="spotify-player">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1GDBWP2WdBTm8TAwMYIVTQ?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <div class="video-container"><iframe width="100%" height="500" src="https://www.youtube.com/embed/NhvUMf3sKF8" frameborder="0" allowfullscreen></iframe></div>
+
+        <div class="song-photo">
+            <img src="https://images.squarespace-cdn.com/content/v1/644eb517833daf75da4c9e53/57c16a91-c553-44dc-97e7-a8c007e9b519/SkyBlue.jpeg" alt="Sky Blue">
+        </div>
+
+        <div class="lyrics">Everything inside of here is gray
+And it's a pointless question to ask if it's night or day
+Every day I'm here I'm bleeding my family dry
+And I wouldn't blame them for wishing I'd just die
+
+Now I can truly say that I loved my wife
+And until now, I truly loved my life
+Eighty-two years and I never slowed down
+And now I'll never see the other side
+of this godforsaken town
+
+I gotta find a way to muddle through
+Find the next thing to do
+Find a way to slip some sunshine through
+To paint these walls sky blue
+
+Sky blue
+Oh sky blue
+My sky blue
+
+I was never one to spend much time living in the past
+But where else can I live
+when nothing else around me seems to last
+And if I close my eyes just right,
+I find I can catch a glimpse of you
+
+And I'll pour the wine for us, and you'll sit beside the fire
+And time and tide can't hold a match to the flame of our desire
+I'll reach out and I'll touch you honey,
+and I'll let my fingers feel
+The chiffon of your dark green dress,
+and what could be more real
+
+Let's lie down on our backs, let's look up at the sky
+Let's each choose a single gull to watch,
+and let's trace it as it flies
+And I don't think I've ever seen,
+I've ever seen anything more true
+Than this sky blue, this sky blue
+My sky blue, my sky blue
+
+Fly me away to this sky blue
+I think I'll spend my time with you
+In this sky blue, in this sky blue
+In our sky blue, in my sky blue
+
+Fly me away to this sky blue
+I think I'll spend my time with you (I think I'll stay)
+In this sky blue, in this sky blue
+In our sky blue, in my sky blue</div>
+
+        <div class="song-nav">
+            <a href="song-falling-apart.html" class="nav-button ">← Previous Track</a>
+            <a href="somethings-not-right-album.html" class="nav-button">Back to Album</a>
+            <a href="song-til-the-music-stops.html" class="nav-button ">Next Track →</a>
+        </div>
+    </div>
+</body>
+</html>
