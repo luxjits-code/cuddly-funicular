@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xanthe - Peter Kleinhans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --gray-light: #f5f5f5;
+            --gray-mid: #666666;
+            --accent: #2952a3;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Work Sans', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 8rem 2rem 4rem; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; margin-bottom: 1rem; }
+        .track-info { color: var(--gray-mid); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3rem; }
+        .spotify-player { margin: 3rem 0; }
+        .video-container { margin: 3rem 0; }
+        .song-photo { margin: 3rem 0; text-align: center; }
+        .song-photo img { max-width: 100%; height: auto; }
+        .lyrics { font-size: 1.05rem; line-height: 1.8; white-space: pre-wrap; margin: 3rem 0; }
+        .song-nav { display: flex; justify-content: space-between; margin: 4rem 0 2rem; padding-top: 2rem; border-top: 1px solid var(--gray-light); }
+        .nav-button { display: inline-block; padding: 0.75rem 1.5rem; background: var(--black); color: var(--white); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s ease; }
+        .nav-button:hover { background: var(--accent); }
+        .nav-button.disabled { opacity: 0.3; pointer-events: none; }
+        @media (max-width: 768px) {
+            .container { padding: 6rem 1.5rem 3rem; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav style="position: fixed; top: 0; left: 0; right: 0; background: white; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0f0f0; font-family: 'Work Sans', sans-serif;">
+        <div style="font-size: 0.85rem; letter-spacing: 0.15em; font-weight: 600;"><a href="index.html" style="text-decoration: none; color: #0a0a0a;">PETER KLEINHANS</a></div>
+        <ul style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;">
+            <li><a href="listen.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Listen</a></li>
+            <li><a href="shows.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Shows</a></li>
+            <li><a href="about.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Story</a></li>
+            <li><a href="press.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Press</a></li>
+            <li><a href="contact.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <style>
+        @media (max-width: 768px) {
+            nav { padding: 0.75rem 1rem !important; flex-wrap: wrap; }
+            nav div { font-size: 0.7rem !important; margin-bottom: 0.5rem; width: 100%; text-align: center; }
+            nav ul { width: 100%; justify-content: center; gap: 0.6rem !important; }
+            nav ul li a { font-size: 0.52rem !important; }
+        }
+    </style>
+
+    <div class="container">
+        <h1>Xanthe</h1>
+        <div class="track-info">Track 04 · By Every Probability (2025)</div>
+
+        <div class="spotify-player">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3Ycm8oCk3WCgaTN6DA29cB?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <div class="video-container"><iframe width="100%" height="500" src="https://www.youtube.com/embed/JJtIpm6uEkI" title="XANTHE" frameborder="0" allowfullscreen></iframe></div>
+
+        <div class="song-photo">
+            <img src="https://images.squarespace-cdn.com/content/v1/644eb517833daf75da4c9e53/PLACEHOLDER.jpeg" alt="Xanthe">
+        </div>
+
+        <div class="lyrics">You've got a space in the seat beside me any time we drive
+You've got a home in the bed beside me when we arrive
+If you need a place to hide me, I'll make sure that I'm not found
+There's no tracing necessary, just call I'll be around
+
+You're my Xanthe
+I chose to take my chances
+Xanthe
+How I've come to love our dances, oh
+
+Xanthe is her alter-ego; I won't divulge her name
+And that's the way our games go, we're both different and the same
+
+Find your freedom, shed your shame, and then shed all the rest
+No matter what the curve I grade you on, I know you'll ace the test
+
+See you through a whole new prism
+See you find a whole new rhythm
+See you live a whole new fiction
+Discover one another's friction, Xanthe
+
+The sum of our parts is far less than the whole
+A perfect strike of lightning illuminates the soul
+You must be in trouble if you're in my bubble or I'll just have to invent some
+Explore your ocean, sail your motion, and watch the next rogue wave come
+
+You've got a space in the seat beside me any time we drive
+You've got a home in the bed beside me when we arrive
+
+See you through a whole new prism
+See you find a whole new rhythm
+See you live a whole new fiction
+Discover one another's friction, Xanthe</div>
+
+        <div class="song-nav">
+            <a href="song-cassandra-bep.html" class="nav-button ">← Previous Track</a>
+            <a href="by-every-probability-album.html" class="nav-button">Back to Album</a>
+            <a href="song-it.html" class="nav-button ">Next Track →</a>
+        </div>
+    </div>
+</body>
+</html>

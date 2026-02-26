@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassandra - Peter Kleinhans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --gray-light: #f5f5f5;
+            --gray-mid: #666666;
+            --accent: #2952a3;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Work Sans', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 8rem 2rem 4rem; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; margin-bottom: 1rem; }
+        .track-info { color: var(--gray-mid); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3rem; }
+        .spotify-player { margin: 3rem 0; }
+        .video-container { margin: 3rem 0; }
+        .song-photo { margin: 3rem 0; text-align: center; }
+        .song-photo img { max-width: 100%; height: auto; }
+        .lyrics { font-size: 1.05rem; line-height: 1.8; white-space: pre-wrap; margin: 3rem 0; }
+        .song-nav { display: flex; justify-content: space-between; margin: 4rem 0 2rem; padding-top: 2rem; border-top: 1px solid var(--gray-light); }
+        .nav-button { display: inline-block; padding: 0.75rem 1.5rem; background: var(--black); color: var(--white); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s ease; }
+        .nav-button:hover { background: var(--accent); }
+        .nav-button.disabled { opacity: 0.3; pointer-events: none; }
+        @media (max-width: 768px) {
+            .container { padding: 6rem 1.5rem 3rem; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav style="position: fixed; top: 0; left: 0; right: 0; background: white; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0f0f0; font-family: 'Work Sans', sans-serif;">
+        <div style="font-size: 0.85rem; letter-spacing: 0.15em; font-weight: 600;"><a href="index.html" style="text-decoration: none; color: #0a0a0a;">PETER KLEINHANS</a></div>
+        <ul style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;">
+            <li><a href="listen.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Listen</a></li>
+            <li><a href="shows.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Shows</a></li>
+            <li><a href="about.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Story</a></li>
+            <li><a href="press.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Press</a></li>
+            <li><a href="contact.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <style>
+        @media (max-width: 768px) {
+            nav { padding: 0.75rem 1rem !important; flex-wrap: wrap; }
+            nav div { font-size: 0.7rem !important; margin-bottom: 0.5rem; width: 100%; text-align: center; }
+            nav ul { width: 100%; justify-content: center; gap: 0.6rem !important; }
+            nav ul li a { font-size: 0.52rem !important; }
+        }
+    </style>
+
+    <div class="container">
+        <h1>Cassandra</h1>
+        <div class="track-info">Track 03 · By Every Probability (2025)</div>
+
+        <div class="spotify-player">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3wV36dRJX30clXMM4DyUeF?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        <div class="video-container"><iframe width="100%" height="500" src="https://www.youtube.com/embed/elGcieFij8U" title="Cassandra" frameborder="0" allowfullscreen></iframe></div>
+
+        <div class="song-photo">
+            <img src="https://images.squarespace-cdn.com/content/v1/644eb517833daf75da4c9e53/PLACEHOLDER.jpeg" alt="Cassandra">
+        </div>
+
+        <div class="lyrics">A goddess, blessed with the gift to foresee the future and where events would go
+Trusted by the people, who knew that she would know
+But when she spurned the god Apollo, he left in an angry fever
+He cursed her gift by making sure that no one would ever again believe her
+
+And now immortal with the power of prediction,
+she spends her words in constant contradiction
+With the mortals- could they listen? They never showed that they could
+And all that she had left was the pain of being misunderstood
+
+Cassandra, Cassandra
+How could you not be lonely knowing
+Only what they fail or fear to see
+No lock in sight; you keep all keys
+
+Cassandra, Cassandra
+They need you but won't heed the fortunes
+that you tell, truths you can't sell
+They don't live long enough to learn it well
+
+Cassandra's words lie just beneath the ground
+But they won't teach or reach a world that doesn't really want them found
+And our history books, dusty like the dead
+Are only dusty 'cause we left them on the shelf, unopened and unread
+
+She's grown used to no one believing
+She's so worn and tired, it's almost relieving
+
+To watch the clouds slip away and let some light fill the land
+world's way
+When the tides drain out and sweep off everything the ocean had thought was here to stay
+sweep away
+
+Cassandra, Cassandra
+How could you not be lonely knowing you will care
+They simply stare; you remember that there's no one there
+
+Cassandra, Cassandra,
+Immortality is just too long to bear
+Your dark brown hair will never gray
+Your short-lived smiles will never stay
+
+Cassandra's words wait barely underground
+The secrets she would love to tell
+could free us from our coming hell
+But perhaps its a little much to ask
+To expect we slip our human mask
+We can't fly and we can't land
+The past and the future die hand-in-hand
+
+Cassandra's words lie barely underground
+But we dance and we fight the whole day round
+Us mortals hear her upside down
+Cassandra might as well have made no sound
+
+Cassandra, Cassandra
+Cassandra, Cassandra
+Cassandra, Cassandra
+Cassandra, Cassandra</div>
+
+        <div class="song-nav">
+            <a href="song-take-the-time.html" class="nav-button ">← Previous Track</a>
+            <a href="by-every-probability-album.html" class="nav-button">Back to Album</a>
+            <a href="song-xanthe.html" class="nav-button ">Next Track →</a>
+        </div>
+    </div>
+</body>
+</html>
