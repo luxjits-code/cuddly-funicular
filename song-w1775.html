@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W1775 - Peter Kleinhans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --gray-light: #f5f5f5;
+            --gray-mid: #666666;
+            --accent: #2952a3;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Work Sans', sans-serif; background: var(--white); color: var(--black); line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 8rem 2rem 4rem; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; margin-bottom: 1rem; }
+        .track-info { color: var(--gray-mid); font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3rem; }
+        .spotify-player { margin: 3rem 0; }
+        .video-container { margin: 3rem 0; }
+        .song-photo { margin: 3rem 0; text-align: center; }
+        .song-photo img { max-width: 100%; height: auto; }
+        .lyrics { font-size: 1.05rem; line-height: 1.8; white-space: pre-wrap; margin: 3rem 0; }
+        .song-nav { display: flex; justify-content: space-between; margin: 4rem 0 2rem; padding-top: 2rem; border-top: 1px solid var(--gray-light); }
+        .nav-button { display: inline-block; padding: 0.75rem 1.5rem; background: var(--black); color: var(--white); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s ease; }
+        .nav-button:hover { background: var(--accent); }
+        .nav-button.disabled { opacity: 0.3; pointer-events: none; }
+        @media (max-width: 768px) {
+            .container { padding: 6rem 1.5rem 3rem; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav style="position: fixed; top: 0; left: 0; right: 0; background: white; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0f0f0; font-family: 'Work Sans', sans-serif;">
+        <div style="font-size: 0.85rem; letter-spacing: 0.15em; font-weight: 600;"><a href="index.html" style="text-decoration: none; color: #0a0a0a;">PETER KLEINHANS</a></div>
+        <ul style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;">
+            <li><a href="listen.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Listen</a></li>
+            <li><a href="shows.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Shows</a></li>
+            <li><a href="about.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Story</a></li>
+            <li><a href="press.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Press</a></li>
+            <li><a href="contact.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <style>
+        @media (max-width: 768px) {
+            nav { padding: 0.75rem 1rem !important; flex-wrap: wrap; }
+            nav div { font-size: 0.7rem !important; margin-bottom: 0.5rem; width: 100%; text-align: center; }
+            nav ul { width: 100%; justify-content: center; gap: 0.6rem !important; }
+            nav ul li a { font-size: 0.52rem !important; }
+        }
+    </style>
+
+    <div class="container">
+        <h1>W1775</h1>
+        <div class="track-info">Track 10 · I Was Alive Enough (2020)</div>
+
+        <div class="spotify-player">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0iQX5pzlV91NOedraoOLib?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+
+        
+
+        <div class="song-photo">
+            <img src="images/i-was-alive-enough.jpg" alt="W1775">
+        </div>
+
+        <div class="lyrics">W 1775
+Wiggled one whisker and opened one eye
+Half was dark earth and half was bright sky
+He saw his mom stand and he thought he would try
+
+But his legs couldn't hold him; they thrashed all about
+But little by little he figured it out
+And by the end of his first day
+He would follow his mom and they'd run
+
+The spring it gave way and the summer set sail
+And he ran and he played and he chased his mom's tail
+And the air was alive with the sting of cut grass
+And that summer was like no one future or past
+
+And then a truck pulled up painted green on the side
+He jumped in the back and they went for a ride
+South Of The Border on I-95
+W1775
+
+(Break)
+
+Winter training began and it was a breeze
+Left front, right rear, just as crisp as you please
+He felt the bit in his mouth, he felt the girth clinched tight
+He felt the left line attached, and then felt the right
+
+And the cart was snapped on, and the driver said go
+And he trotted
+If you find yourself lost in this world as it rots
+Watch the gravel kicked sideways as a two-year-old trots
+
+If it isn't just glorious, lovely, and clean
+Then my words can't describe what your eyes haven't seen
+No my words can't describe what your eyes haven't seen
+
+(Break)
+
+When April came calling, he'd learned his job well
+He'd handled his lessons, earned a toll of the bell
+And eagerly North, the green truck, 95
+Went W1775
+
+Every week faster and faster they'd go
+1775 and his foe
+They paired him with a filly, they trained them together 
+And their velocity soared along with the weather
+
+And the next time the truck came it was just he and his girl
+No road trip this time, just a short little whirl
+To a racetrack where forty short years ago
+Forty thousand a night would clamor to go
+
+And when he was hooked and set out on the track
+He'd never been there before but he felt he was back
+At home with the stone dust, the grandstand, the rail 
+As happy as when he'd followed mom's tail
+
+And the starting car came and it opened its wings
+Seven babies behind it, their tendons like springs
+He put his nose on the gate like he'd always known how 
+The only place here, and the only time now
+
+And the gate sprung open, colors flew all around
+Horses charged from both sides but he held his ground
+And 1775 saw it all
+And soon he was racing each week until fall
+
+He didn't win all his races but still he won plenty
+Of ninety-six tries he won almost twenty
+He wasn't a champ but he paid his way
+But once he turned eight, he lost a step then another
+
+And one race was worse and was worse than the other
+One day a man came to talk to the trainer
+He said "do you have anything here who can't beat a claimer"?
+
+Hands in his pockets, averting his eyes
+He said yes, W1775
+But find him a good horse or at least a good job
+He's a hard-working horse and he can't be robbed
+
+Of the rest of his life that he earned while racing
+The main said I'll see what I can do with the placing
+So under the tunnel, New Jersey, New York,
+Where his great great grandsire worked through the great war
+
+And life was so different, but no one else cared
+Just a carriage horse now, not excited, not scared
+Now the mornings were different, but he was the same,
+Though when he was a racehorse he'd once had a name
+
+Now he was just a number tattooed on his hide
+W1775
+And nobody raced, their carts heavy and slow,
+But he learned every street, red for stop green for go
+
+And the cars had no wings but there were people to meet
+Kids' feet not to step on, water troughs in the heat
+He'd raced for six years, pulled a cariage for nine
+And through those fifteen, his coat lost its shine
+
+And the muscles so tense and so taut when he raced
+Were tired and spent and lost and displaced
+They called his old owner; could she give him a home
+She said "we've always got a place for one of our own"
+
+And the van shook and rattled, and the door was pulled down
+Inviting him down to fresh grass and fresh ground
+Inviting him down to  fresh grass and fresh ground
+W1775
+
+Wiggled one whisker and closed one eye
+All was dark earth, gone the bright sky
+But he felt a deep rest, why fight it, why try
+He spent his life doing only things he'd been told
+
+And he'd never decided on how to grow old
+But he was never more than a length from fully alive
+W1775
+W1775
+W1775</div>
+
+        <div class="song-nav">
+            <a href="song-new-mexico.html" class="nav-button ">← Previous Track</a>
+            <a href="i-was-alive-enough-album.html" class="nav-button">Back to Album</a>
+            <a href="song-table-for-one.html" class="nav-button ">Next Track →</a>
+        </div>
+    </div>
+</body>
+</html>
