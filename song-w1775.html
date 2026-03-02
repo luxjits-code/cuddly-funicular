@@ -64,6 +64,9 @@
             <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0iQX5pzlV91NOedraoOLib?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
 
+        <button class="view-lyrics-btn" onclick="openLyricsModal()">View Lyrics</button>
+
+
         
 
         <div class="song-photo">
@@ -199,5 +202,132 @@ W1775</div>
             <a href="song-table-for-one.html" class="nav-button ">Next Track →</a>
         </div>
     </div>
+
+    <!-- Lyrics Modal -->
+    <div id="lyricsModal" class="lyrics-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Lyrics</h2>
+                <button class="close-modal" onclick="closeLyricsModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalLyricsContent"></div>
+        </div>
+    </div>
+
+    <style>
+        .lyrics-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 0;
+            max-width: 700px;
+            width: 90%;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 2.5rem;
+            color: #666;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #000;
+        }
+
+        .modal-body {
+            padding: 2rem;
+            overflow-y: auto;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+
+        .view-lyrics-btn {
+            display: inline-block;
+            margin: 1rem 0;
+            padding: 0.75rem 1.5rem;
+            background: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .view-lyrics-btn:hover {
+            background: var(--accent);
+        }
+    </style>
+
+    <script>
+        function openLyricsModal() {
+            const lyricsContent = document.querySelector('.lyrics').textContent;
+            document.getElementById('modalLyricsContent').textContent = lyricsContent;
+            document.getElementById('lyricsModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLyricsModal() {
+            document.getElementById('lyricsModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('lyricsModal');
+            if (event.target == modal) {
+                closeLyricsModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLyricsModal();
+            }
+        });
+    </script>
+
 </body>
 </html>
