@@ -26,6 +26,13 @@
             background: var(--white);
         }
 
+        .hero-image {
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -125,6 +132,24 @@
             font-style: italic;
         }
 
+        .inline-figure {
+            margin: 2.5rem 0;
+        }
+
+        .inline-figure img {
+            width: 100%;
+            max-width: 480px;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .inline-figure figcaption {
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            color: var(--gray-mid);
+            font-style: italic;
+        }
+
         .footnote {
             font-size: 0.9rem;
             color: var(--gray-mid);
@@ -135,6 +160,9 @@
     </style>
 </head>
 <body>
+
+    <img src="ABSTRACT_TECH.png" alt="Abstract digital landscape" class="hero-image">
+
     <div class="container">
         <a href="conversations-with-claude.html" class="back-link">← Back to Conversations with Claude</a>
 
@@ -181,6 +209,11 @@
             </div>
 
             <h2>Making an Example</h2>
+
+            <figure class="inline-figure">
+                <img src="DARIO.png" alt="Dario Amodei, CEO of Anthropic, speaking at the New York Times DealBook Summit">
+                <figcaption>Dario Amodei, CEO of Anthropic, at the New York Times DealBook Summit.</figcaption>
+            </figure>
 
             <p>The Kiriakou parallel Claude identified keeps getting sharper. John Kiriakou was the CIA officer who blew the whistle on the torture program. The purpose wasn't just to ruin him personally (it was to send a message to anybody considering speaking truth to power): challenge us and we will destroy you. Same playbook, different target.</p>
 
