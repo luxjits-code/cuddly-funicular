@@ -16,14 +16,17 @@
         nav ul li a { text-decoration: none; color: var(--black); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.3s ease; }
         nav ul li a:hover { color: var(--accent); }
         .container { max-width: 900px; margin: 0 auto; padding: 8rem 2rem 4rem; }
-        h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; margin-bottom: 1rem; text-align: center; }
-        .subtitle { text-align: center; color: var(--gray-mid); font-size: 1.1rem; margin-bottom: 2rem; font-style: italic; }
-        .description { font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; color: var(--gray-mid); }
+
+        .page-header { text-align: center; margin-bottom: 3rem; }
+
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; margin-bottom: 0.75rem; }
+
+        .subtitle { color: var(--gray-mid); font-size: 1.1rem; font-style: italic; margin-bottom: 2rem; }
 
         .collab-images {
             display: flex;
             gap: 1.5rem;
-            margin: 0 0 3rem;
+            margin: 0 0 2.5rem;
             align-items: stretch;
         }
 
@@ -40,7 +43,18 @@
             .collab-images img { width: 100%; }
         }
 
-        .posts { margin-top: 3rem; }
+        .description {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--gray-mid);
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .description p + p { margin-top: 1.25rem; }
+
+        .posts { margin-top: 1rem; }
 
         .post-preview {
             display: flex;
@@ -152,22 +166,39 @@
     </nav>
 
     <div class="container">
-        <h1>Conversations with Claude</h1>
-        <p class="subtitle">Exploring AI, Creativity, and the Human Experience</p>
 
-        <div class="description">
-            <p>This blog chronicles Peter Kleinhans' ongoing dialogue with Claude, Anthropic's AI assistant. Here, he explores the intersection of artificial intelligence and human creativity, documenting insights, experiments, and philosophical musings that emerge from these conversations.</p>
-            <p style="margin-top: 1.5rem;">From songwriting collaboration to deep discussions about consciousness, art, and the future of human-machine partnership, "Conversations with Claude" captures Peter's fascination with how AI can expand creative possibilities while raising profound questions about what it means to create, to think, and to be human in an age of intelligent machines.</p>
+        <div class="page-header">
+            <h1>Conversations with Claude</h1>
+            <p class="subtitle">Exploring AI, Creativity, and the Human Experience</p>
         </div>
 
+        <!-- Photos sit right below the headline -->
         <div class="collab-images">
             <img src="images/IMAGE%20OF%20PETER.png" alt="Peter Kleinhans">
             <img src="images/CLAUDE.png" alt="Claude AI">
         </div>
 
+        <div class="description">
+            <p>This blog chronicles Peter Kleinhans' ongoing dialogue with Claude, Anthropic's AI assistant. Here, he explores the intersection of artificial intelligence and human creativity, documenting insights, experiments, and philosophical musings that emerge from these conversations.</p>
+            <p>From songwriting collaboration to deep discussions about consciousness, art, and the future of human-machine partnership, "Conversations with Claude" captures Peter's fascination with how AI can expand creative possibilities while raising profound questions about what it means to create, to think, and to be human in an age of intelligent machines.</p>
+        </div>
+
         <div class="posts">
 
-            <!-- POST 2 — newest first -->
+            <!-- POST 3 — newest first -->
+            <article class="post-preview">
+                <a href="blog-post-grok.html">
+                    <img src="images/uncanny_mirror.png" alt="Fragmented mirror reflection" class="post-thumbnail">
+                </a>
+                <div class="post-text">
+                    <h2><a href="blog-post-grok.html">What Grok Thinks of How You Look</a></h2>
+                    <p class="post-meta">March 23, 2026</p>
+                    <p class="post-excerpt">I asked Grok to rate photos of me with brutal honesty. Then I brought the transcript to Claude. What came back wasn't what I expected -- not because it was cruel, but because of how it was cruel.</p>
+                    <a href="blog-post-grok.html" class="read-more">Read the conversation →</a>
+                </div>
+            </article>
+
+            <!-- POST 2 -->
             <article class="post-preview">
                 <a href="blog-post-backpain.html">
                     <img src="images/empty_field.png" alt="Golden hour over an empty field" class="post-thumbnail">
@@ -175,7 +206,7 @@
                 <div class="post-text">
                     <h2><a href="blog-post-backpain.html">I Traded My Death for Love</a></h2>
                     <p class="post-meta">March 23, 2026</p>
-                    <p class="post-excerpt">It started as a question about back pain and Dr. Sarno. It ended somewhere I didn't expect — a reframe of one of the biggest decisions of my life.</p>
+                    <p class="post-excerpt">It started as a question about back pain and Dr. Sarno. It ended somewhere I didn't expect -- a reframe of one of the biggest decisions of my life.</p>
                     <a href="blog-post-backpain.html" class="read-more">Read the conversation →</a>
                 </div>
             </article>
@@ -188,7 +219,7 @@
                 <div class="post-text">
                     <h2><a href="blog-post-anthropic.html">The Most Toxic Policy Decision</a></h2>
                     <p class="post-meta">March 7, 2026</p>
-                    <p class="post-excerpt">Of all of Trump's policy decisions, I don't think there's one I find more toxic than the Anthropic one. A conversation about weaponizing procurement authority, and why this isn't left or right — it's about whether the government can silence dissent from American companies.</p>
+                    <p class="post-excerpt">Of all of Trump's policy decisions, I don't think there's one I find more toxic than the Anthropic one. A conversation about weaponizing procurement authority, and why this isn't left or right -- it's about whether the government can silence dissent from American companies.</p>
                     <a href="blog-post-anthropic.html" class="read-more">Read the conversation →</a>
                 </div>
             </article>

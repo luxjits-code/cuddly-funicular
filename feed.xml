@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0">
   <channel>
-    <title>Conversations with Claude — Peter Kleinhans</title>
-    <link>https://luxjits-code.github.io/peter-kleinhans-website/conversations-with-claude.html</link>
-    <description>Peter Kleinhans explores AI, creativity, and the world through dialogue with Anthropic's Claude.</description>
+    <title>Conversations with Claude -- Peter Kleinhans</title>
+    <link>https://peterkleinhans.com/conversations-with-claude.html</link>
+    <description>Peter Kleinhans in conversation with Claude -- on music, mortality, and everything in between.</description>
     <language>en-us</language>
-    <atom:link href="https://luxjits-code.github.io/peter-kleinhans-website/feed.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>What Grok Thinks of How You Look</title>
+      <link>https://peterkleinhans.com/blog-post-grok.html</link>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <description>I asked Grok to rate photos of me with brutal honesty. Then I brought the transcript to Claude. What came back wasn't what I expected.</description>
+    </item>
+
+    <item>
+      <title>I Traded My Death for Love</title>
+      <link>https://peterkleinhans.com/blog-post-backpain.html</link>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <description>It started as a question about back pain and Dr. Sarno. It ended somewhere I didn't expect -- a reframe of one of the biggest decisions of my life.</description>
+    </item>
 
     <item>
       <title>The Most Toxic Policy Decision</title>
-      <link>https://luxjits-code.github.io/peter-kleinhans-website/blog-post-anthropic.html</link>
-      <guid>https://luxjits-code.github.io/peter-kleinhans-website/blog-post-anthropic.html</guid>
+      <link>https://peterkleinhans.com/blog-post-anthropic.html</link>
       <pubDate>Fri, 07 Mar 2026 00:00:00 +0000</pubDate>
-      <description>Of all of Trump's policy decisions, I don't think there's one I find more toxic than the Anthropic one. A conversation about weaponizing procurement authority, setting dangerous precedents, and why this isn't left or right — it's about whether the government can silence dissent from American companies.</description>
+      <description>The Trump administration designated Anthropic as a supply chain risk. I sat down with Claude to think through what that actually means.</description>
     </item>
 
   </channel>
