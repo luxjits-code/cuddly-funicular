@@ -26,7 +26,7 @@
             width: 100%;
             max-height: 420px;
             object-fit: cover;
-            object-position: center 40%;
+            object-position: center center;
             display: block;
         }
 
@@ -73,14 +73,12 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Act break -- thin rule with breathing room */
         .act-break {
             border: none;
             border-top: 1px solid #e0e0e0;
             margin: 3.5rem 0;
         }
 
-        /* Conversation boxes -- tighter for quick exchanges, normal for longer */
         .conversation-box {
             background: var(--gray-light);
             border-left: 3px solid var(--accent);
@@ -120,7 +118,6 @@
         .message p { margin-bottom: 0.75rem; }
         .message p:last-child { margin-bottom: 0; }
 
-        /* The typographic "u vs you" moment */
         .u-moment {
             display: flex;
             gap: 3rem;
@@ -153,7 +150,7 @@
         }
 
         .pullquote {
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             font-style: italic;
             color: var(--accent);
             margin: 3rem 0;
@@ -161,7 +158,7 @@
             border-top: 1px solid var(--gray-light);
             border-bottom: 1px solid var(--gray-light);
             text-align: center;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .inline-figure {
@@ -173,10 +170,6 @@
             max-width: 480px;
             display: block;
             border-radius: 4px;
-        }
-
-        .inline-figure.full img {
-            max-width: 100%;
         }
 
         .inline-figure figcaption {
@@ -206,8 +199,8 @@
 </head>
 <body>
 
-    <!-- HERO IMAGE — file: images/peter_racing2.png -->
-    <img src="images/peter_racing2.png" alt="Peter Kleinhans driving at the track at night" class="hero-image">
+    <!-- HERO IMAGE — file: images/vintage_keyboad.png -->
+    <img src="images/vintage_keyboad.png" alt="Vintage typewriter keyboard" class="hero-image">
 
     <div class="container">
         <a href="conversations-with-claude.html" class="back-link">← Back to Conversations with Claude</a>
@@ -224,8 +217,7 @@
 
         <div class="content">
 
-            <!-- ACT 1: The horse joke, light and fast -->
-
+            <!-- ACT 1: The horse joke -->
             <div class="conversation-box tight">
                 <div class="exchange">
                     <div class="speaker">Peter</div>
@@ -249,7 +241,7 @@
                 </div>
             </div>
 
-            <!-- The typographic moment -->
+            <!-- Typographic moment -->
             <div class="u-moment">
                 <span class="word">you</span>
                 <span class="divider-word">vs</span>
@@ -273,12 +265,12 @@
 
             <hr class="act-break">
 
-            <!-- ACT 2: ChatGPT apology, deepening -->
+            <!-- ACT 2: ChatGPT apology -->
 
-            <!-- INLINE IMAGE — file: images/vintage_keyboard.png -->
+            <!-- INLINE IMAGE — file: images/peter_racing.png (wide track shot) -->
             <figure class="inline-figure">
-                <img src="images/vintage_keyboard.png" alt="Vintage typewriter keyboard">
-                <figcaption>The work that a smile or a tone of voice would do in person.</figcaption>
+                <img src="images/peter_racing.png" alt="Peter Kleinhans driving at the track at night">
+                <figcaption>Where the conversation started.</figcaption>
             </figure>
 
             <div class="conversation-box">
@@ -350,13 +342,13 @@
             </div>
 
             <div class="pullquote">
-                "Which is either beautiful or slightly alarming depending on how you look at it. Probably both simultaneously."
+                "Which is either beautiful or slightly alarming depending on how you look at it.<br>Probably both simultaneously."
             </div>
 
-            <!-- INLINE IMAGE — file: images/peter_racing.png -->
+            <!-- INLINE IMAGE — file: images/peter_racing2.png (close-up smiling portrait) -->
             <figure class="inline-figure">
-                <img src="images/peter_racing.png" alt="Peter Kleinhans smiling after a race">
-                <figcaption>The "u clown" energy, in person.</figcaption>
+                <img src="images/peter_racing2.png" alt="Peter Kleinhans after a race">
+                <figcaption>After a win at the track. The man who chooses his words carefully.</figcaption>
             </figure>
 
             <div class="conversation-box">
