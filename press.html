@@ -6,7 +6,7 @@
     <title>Press - Peter Kleinhans</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --white: #ffffff;
@@ -46,10 +46,160 @@
         .press-intro {
             font-size: 1.1rem;
             color: var(--gray-mid);
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             max-width: 700px;
         }
 
+        /* AS FEATURED IN */
+        .featured-in {
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 2rem 0;
+            margin-bottom: 4rem;
+        }
+
+        .featured-in-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gray-mid);
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-in-logos {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .outlet-logo {
+            text-decoration: none;
+            color: var(--gray-mid);
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .outlet-logo:hover {
+            color: var(--black);
+        }
+
+        .outlet-logo span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .outlet-logo.serif-bold span {
+            font-weight: 600;
+            font-size: 1.1rem;
+            font-family: 'Work Sans', sans-serif;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        /* FEATURED ARTICLE HERO */
+        .featured-hero {
+            background: var(--black);
+            color: var(--white);
+            padding: 3.5rem;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 60%);
+            z-index: 0;
+        }
+
+        .featured-hero > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #a0b4d6;
+            border: 1px solid #a0b4d6;
+            padding: 0.3rem 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-outlet {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #a0b4d6;
+            margin-bottom: 1rem;
+        }
+
+        .featured-hero h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+
+        .featured-pullquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            font-weight: 300;
+            line-height: 1.5;
+            color: #d0d8e8;
+            border-left: 2px solid var(--accent);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0 2rem;
+            max-width: 680px;
+        }
+
+        .featured-meta {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-excerpt {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #bbb;
+            max-width: 680px;
+            margin-bottom: 2rem;
+        }
+
+        .featured-link {
+            display: inline-block;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .featured-link:hover {
+            border-color: var(--white);
+        }
+
+        /* PRESS GRID */
         .press-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -113,9 +263,25 @@
                 font-size: 2.5rem;
             }
 
+            .featured-hero {
+                padding: 2rem;
+            }
+
+            .featured-hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .featured-pullquote {
+                font-size: 1.15rem;
+            }
+
             .press-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            .featured-in-logos {
+                gap: 1.5rem;
             }
         }
     </style>
@@ -132,7 +298,7 @@
             <li><a href="contact.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Contact</a></li>
         </ul>
     </nav>
-    
+
     <style>
         @media (max-width: 768px) {
             nav {
@@ -161,12 +327,59 @@
         <p class="press-intro">
             Press coverage and reviews of Peter Kleinhans' music, performances, and career across harness racing and songwriting.
         </p>
-        
+
         <div style="text-align: center; margin: 2rem 0 3rem;">
             <a href="https://luxjits-code.github.io/cuddly-funicular/Peter-Kleinhans-Press-Kit.pdf" download style="display: inline-block; background: #2952a3; color: white; padding: 1rem 2.5rem; text-decoration: none; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.3s ease; border: 2px solid #2952a3;">Download Press Kit (PDF)</a>
         </div>
 
+        <!-- AS FEATURED IN -->
+        <div class="featured-in">
+            <div class="featured-in-label">As Featured In</div>
+            <div class="featured-in-logos">
+                <a href="https://www.laweekly.com/peter-kleinhans-maps-the-modern-condition-on-selections/" target="_blank" class="outlet-logo">
+                    <span style="font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase;">LA Weekly</span>
+                </a>
+                <a href="https://1883magazine.com/peter-kleinhans-selections-18-questions/" target="_blank" class="outlet-logo">
+                    <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; letter-spacing: 0.06em;">1883 Magazine</span>
+                </a>
+                <a href="https://harnessracingupdate.com/2024/10/20/peter-kleinhans-is-harness-racings-renaissance-man-2/" target="_blank" class="outlet-logo">
+                    <span style="font-family: 'Work Sans', sans-serif; font-weight: 300; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase;">Harness Racing Update</span>
+                </a>
+                <a href="https://klefnotes.com/music-features/blog/7676351/album-review-peter-kleinhans-by-every-probability-a-soundtrack-for-being-human" target="_blank" class="outlet-logo">
+                    <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic;">Klef Notes</span>
+                </a>
+                <a href="https://eclecticmusiclover.com/2019/11/30/peter-kleinhans-releases-new-video-for-somethings-not-right/" target="_blank" class="outlet-logo">
+                    <span style="font-family: 'Work Sans', sans-serif; font-weight: 300; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">Eclectic Music Lover</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- FEATURED ARTICLE: LA WEEKLY -->
+        <div class="featured-hero">
+            <div class="featured-badge">Featured</div>
+            <div class="featured-outlet">LA Weekly &nbsp;·&nbsp; April 7, 2026 &nbsp;·&nbsp; Nia Bowers</div>
+            <h2>Peter Kleinhans Maps the Modern Condition on "Selections"</h2>
+            <div class="featured-pullquote">
+                "As 'Selections' unfolds, it reveals Peter Kleinhans as a deeply attentive observer — his perspective moving from horses to markets to music and ultimately to the unease of watching a culture shift as the world becomes just a little too different, too fast."
+            </div>
+            <p class="featured-excerpt">
+                Kleinhans examines technological anxiety, modern desire, and the struggle to remain human as algorithms are designed to make us more predictable. His sound moves fluidly between pop and folk rock, with guitar work that leans into jazz fusion and a warm, distinctive voice that has drawn comparisons to Dave Matthews.
+            </p>
+            <a href="https://www.laweekly.com/peter-kleinhans-maps-the-modern-condition-on-selections/" target="_blank" class="featured-link">Read Full Article →</a>
+        </div>
+
+        <!-- PRESS GRID -->
         <div class="press-grid">
+
+            <div class="press-item">
+                <h3>18 Questions: Peter Kleinhans on Selections</h3>
+                <div class="press-meta">1883 Magazine · March 24, 2026</div>
+                <p class="press-excerpt">
+                    An in-depth conversation spanning fatherhood, the long road into music, and why Kleinhans would rather ask questions than offer answers. He talks about the ideas behind Selections, from digital addiction and monetary policy to a forgotten colonial uprising.
+                </p>
+                <a href="https://1883magazine.com/peter-kleinhans-selections-18-questions/" target="_blank" class="press-link">Read Interview →</a>
+            </div>
+
             <div class="press-item">
                 <h3>Harness Racing's Renaissance Man</h3>
                 <div class="press-meta">Harness Racing Update · October 2024</div>
@@ -229,6 +442,7 @@
                 </p>
                 <a href="https://eclecticmusiclover.com/2018/10/16/guest-post-the-ghost-of-graffiti-past-and-the-allure-of-the-91st-street-subway-station-by-peter-kleinhans/" target="_blank" class="press-link">Read Article →</a>
             </div>
+
         </div>
     </div>
 </body>
