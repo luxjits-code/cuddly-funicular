@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investments – Peter Kleinhans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --gray-light: #f5f5f5;
+            --gray-mid: #666666;
+            --gray-border: #e0e0e0;
+            --accent: #2952a3;
+            --accent-bright: #3b5bdb;
+            --long-bg: #f0f4ff;
+            --long-text: #1a3a7a;
+            --short-bg: #fff4f0;
+            --short-text: #7a1a1a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            overflow-x: hidden;
+        }
+
+        /* ── Nav ── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #f0f0f0;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .nav-logo {
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--black);
+            font-size: 0.65rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active { color: var(--accent); }
+
+        /* ── Page Header ── */
+        .page-header {
+            padding: 10rem 8rem 5rem;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            left: 6rem;
+            top: 8rem;
+            width: 4px;
+            height: 100px;
+            background: var(--accent);
+        }
+
+        .page-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .page-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 2rem;
+        }
+
+        .page-intro {
+            max-width: 680px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .meta-line {
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            color: var(--gray-mid);
+            text-transform: uppercase;
+        }
+
+        /* ── Section ── */
+        .investments-section {
+            padding: 0 8rem 8rem;
+        }
+
+        .section-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        /* ── Cards ── */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .card {
+            border: 1px solid var(--gray-border);
+            padding: 2rem;
+            position: relative;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .ticker {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            line-height: 1;
+        }
+
+        .position-badge {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.35rem 0.8rem;
+            border-radius: 2px;
+        }
+
+        .badge-long {
+            background: var(--long-bg);
+            color: var(--long-text);
+        }
+
+        .badge-short {
+            background: var(--short-bg);
+            color: var(--short-text);
+        }
+
+        .card-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .meta-item label {
+            display: block;
+            font-size: 0.6rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gray-mid);
+            margin-bottom: 0.25rem;
+        }
+
+        .meta-item span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--black);
+        }
+
+        .card-thesis {
+            font-size: 0.9rem;
+            line-height: 1.75;
+            color: #333;
+        }
+
+        .card-thesis-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gray-mid);
+            margin-bottom: 0.5rem;
+        }
+
+        /* ── Disclaimer ── */
+        .disclaimer {
+            padding: 2rem 3rem;
+            background: var(--gray-light);
+            border-left: 4px solid var(--accent);
+            font-size: 0.82rem;
+            line-height: 1.7;
+            color: var(--gray-mid);
+            max-width: 860px;
+        }
+
+        /* ── Newsletter CTA ── */
+        .newsletter-cta {
+            margin-top: 5rem;
+            padding: 4rem 0;
+            border-top: 1px solid var(--gray-border);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .newsletter-cta h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .newsletter-cta p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #444;
+            max-width: 560px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 1rem 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--black);
+            color: var(--white);
+            border: 2px solid var(--black);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem 8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+        }
+
+        footer p {
+            font-size: 0.75rem;
+            color: #888;
+            letter-spacing: 0.05em;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            nav { flex-wrap: wrap; padding: 0.75rem 1rem; }
+            nav .nav-logo { font-size: 0.7rem; width: 100%; text-align: center; margin-bottom: 0.5rem; }
+            nav ul { width: 100%; justify-content: center; gap: 0.6rem; }
+            nav ul li a { font-size: 0.52rem; }
+
+            .page-header { padding: 8rem 1.5rem 3rem; }
+            .page-header::before { left: 1.5rem; top: 6rem; height: 60px; }
+            .page-title { font-size: 3rem; }
+            .page-intro { font-size: 0.95rem; }
+
+            .investments-section { padding: 0 1.5rem 4rem; }
+            .cards-grid { grid-template-columns: 1fr; }
+
+            .newsletter-cta h2 { font-size: 2rem; }
+
+            footer { flex-direction: column; gap: 1rem; padding: 2rem 1.5rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="nav-logo" href="index.html">PETER KLEINHANS</a>
+        <ul>
+            <li><a href="listen.html">Listen</a></li>
+            <li><a href="shows.html">Shows</a></li>
+            <li><a href="about.html">Story</a></li>
+            <li><a href="press.html">Press</a></li>
+            <li><a href="conversations-with-claude.html">Blog</a></li>
+            <li><a href="investments.html" class="active">Investments</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-header">
+        <p class="page-label">Market Analysis</p>
+        <h1 class="page-title">Investments</h1>
+        <p class="page-intro">
+            I've spent a career reading situations — races, rooms, records. Markets are no different. 
+            These are my current positions, the thinking behind them, and where I see them going. 
+
+        </p>
+        <p class="meta-line">Last updated: April 10, 2026 &nbsp;·&nbsp; Energy Sector</p>
+    </div>
+
+    <div class="investments-section">
+
+        <h2 class="section-heading">Energy</h2>
+
+        <div class="cards-grid">
+
+            <!-- Crude Oil Futures -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="ticker">Crude Oil<br><small style="font-size:1rem;color:var(--gray-mid);">Dec Futures</small></div>
+                    <span class="position-badge badge-long">Long</span>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <label>Entry Price</label>
+                        <span>$71.46 / bbl</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Entry Date</label>
+                        <span>Apr 10, 2026</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Horizon</label>
+                        <span>December 2026</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Range</label>
+                        <span>~$40 down · $150+ up</span>
+                    </div>
+                </div>
+                <p class="card-thesis-label">Thesis</p>
+                <p class="card-thesis">
+                    Market pricing in war-driven supply disruption, with Dec futures depressed vs. spot (~$95). 
+                    Infrastructure damage from the Iran conflict is structural, not transitory — prices will not recover 
+                    as cleanly as consensus expects. Asymmetric setup with meaningful upside.
+                </p>
+            </div>
+
+            <!-- EWY -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="ticker">EWY<br><small style="font-size:1rem;color:var(--gray-mid);">Korea ETF</small></div>
+                    <span class="position-badge badge-short">Short</span>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <label>Entry Price</label>
+                        <span>$138.73</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Entry Date</label>
+                        <span>Apr 10, 2026 (pending)</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Horizon</label>
+                        <span>Open — chart-driven</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Setup</label>
+                        <span>Technical + Fundamental</span>
+                    </div>
+                </div>
+                <p class="card-thesis-label">Thesis</p>
+                <p class="card-thesis">
+                    South Korea is acutely exposed to Strait of Hormuz disruption and faces jet fuel shortages. 
+                    Memory chip production requires inputs dependent on a stable energy supply. 
+                    Chart setup is compelling; price has not yet reflected the fundamental risk.
+                </p>
+            </div>
+
+            <!-- EWA -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="ticker">EWA<br><small style="font-size:1rem;color:var(--gray-mid);">Australia ETF</small></div>
+                    <span class="position-badge badge-short">Short</span>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <label>Entry Price</label>
+                        <span>$29.86</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Entry Date</label>
+                        <span>~Mar 2026</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Horizon</label>
+                        <span>Open — chart-driven</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Setup</label>
+                        <span>Structural vulnerability</span>
+                    </div>
+                </div>
+                <p class="card-thesis-label">Thesis</p>
+                <p class="card-thesis">
+                    Australia is heavily reliant on Middle Eastern oil with no significant strategic reserve. 
+                    Energy storage infrastructure was not designed for sustained disruption. 
+                    Structural vulnerability not yet priced in by the market.
+                </p>
+            </div>
+
+            <!-- CCJ -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="ticker">CCJ<br><small style="font-size:1rem;color:var(--gray-mid);">Cameco Corp</small></div>
+                    <span class="position-badge badge-long">Long</span>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <label>Entry Price</label>
+                        <span>$86.00</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Entry Date</label>
+                        <span>Spring 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Horizon</label>
+                        <span>Open — buy &amp; hold</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Conviction</label>
+                        <span>High</span>
+                    </div>
+                </div>
+                <p class="card-thesis-label">Thesis</p>
+                <p class="card-thesis">
+                    Uranium producer positioned for the long-term nuclear renaissance in the US. 
+                    AI-driven data center growth will require massive baseload power — nuclear is the most viable answer. 
+                    May face near-term volatility before the secular trend accelerates.
+                </p>
+            </div>
+
+            <!-- LEU -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="ticker">LEU<br><small style="font-size:1rem;color:var(--gray-mid);">Centrus Energy</small></div>
+                    <span class="position-badge badge-long">Long</span>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <label>Entry Price</label>
+                        <span>$120.00</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Entry Date</label>
+                        <span>Spring 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Horizon</label>
+                        <span>Open — buy &amp; hold</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Conviction</label>
+                        <span>High</span>
+                    </div>
+                </div>
+                <p class="card-thesis-label">Thesis</p>
+                <p class="card-thesis">
+                    Uranium enrichment play, complementary to CCJ. Same core thesis: long-term nuclear energy demand 
+                    driven by data center build-out and the AI infrastructure boom. Buy and hold with conviction.
+                </p>
+            </div>
+
+            <!-- OKLO -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="ticker">OKLO<br><small style="font-size:1rem;color:var(--gray-mid);">Oklo Inc.</small></div>
+                    <span class="position-badge badge-long">Long</span>
+                </div>
+                <div class="card-meta">
+                    <div class="meta-item">
+                        <label>Entry Price</label>
+                        <span>$20.00</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Entry Date</label>
+                        <span>Jan 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Horizon</label>
+                        <span>Open — buy &amp; hold</span>
+                    </div>
+                    <div class="meta-item">
+                        <label>Stage</label>
+                        <span>Early-stage / High conviction</span>
+                    </div>
+                </div>
+                <p class="card-thesis-label">Thesis</p>
+                <p class="card-thesis">
+                    Advanced small modular reactor developer. Positioned to supply next-generation nuclear power 
+                    to AI data centers. Early-stage but strategically placed at the intersection of nuclear energy 
+                    and AI infrastructure demand.
+                </p>
+            </div>
+
+        </div><!-- /cards-grid -->
+
+        <div class="disclaimer">
+            All positions reflect personal research and conviction. Nothing here constitutes financial advice. 
+            Do your own work before making any investment decision.
+        </div>
+
+        <div class="newsletter-cta">
+            <h2>Stay in the Loop</h2>
+            <p>
+                I'm building toward a regular newsletter — market analysis, position updates, and the thinking 
+                behind the trades. If that sounds useful, get in touch and I'll add you to the list when it launches.
+            </p>
+            <a href="contact.html" class="btn btn-primary">Get Notified</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-logo">Peter Kleinhans</div>
+        <p>&copy; 2026 Peter Kleinhans. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
