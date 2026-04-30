@@ -631,44 +631,61 @@
     </footer>
 
     <script>
-        const tickers = ['EWY', 'EWA', 'CCJ', 'LEU', 'OKLO'];
-        const clSymbol = 'CL=F';
+        // Free Finnhub API for stocks - get your key at finnhub.io (takes 30 seconds)
+        const FINNHUB_KEY = 'd7pk9a9r01qlb0aaa46gd7pk9a9r01qlb0aaa470';
 
-        // Uses allorigins.win as a CORS proxy to reach Yahoo Finance
-        async function fetchPrice(symbol) {
-            try {
-                const yahooUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=2d`;
-                const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(yahooUrl)}`;
-                const res = await fetch(proxyUrl);
-                const wrapper = await res.json();
-                const data = JSON.parse(wrapper.contents);
-                const meta = data.chart.result[0].meta;
-                const price = meta.regularMarketPrice;
-                const prev = meta.chartPreviousClose || meta.previousClose;
-                const change = price - prev;
-                const changePct = (change / prev) * 100;
-                return { price, change, changePct };
-            } catch(e) {
-                return null;
-            }
+        const positions = [
+            { sym: 'EWY',  id: 'EWY',  source: 'finnhub' },
+            { sym: 'EWA',  id: 'EWA',  source: 'finnhub' },
+            { sym: 'CCJ',  id: 'CCJ',  source: 'finnhub' },
+            { sym: 'LEU',  id: 'LEU',  source: 'finnhub' },
+            { sym: 'OKLO', id: 'OKLO', source: 'finnhub' },
+            { sym: 'CL=F', id: 'CL',   source: 'yahoo'   },
+        ];
+
+        async function fetchFinnhub(symbol) {
+            const url = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${FINNHUB_KEY}`;
+            const res = await fetch(url);
+            const d = await res.json();
+            if (!d.c || d.c === 0) return null;
+            return { price: d.c, change: d.d, changePct: d.dp };
+        }
+
+        async function fetchYahooViaProxy(symbol) {
+            const yahooUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=2d`;
+            const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(yahooUrl)}`;
+            const res = await fetch(proxyUrl);
+            const data = await res.json();
+            const meta = data.chart.result[0].meta;
+            const price = meta.regularMarketPrice;
+            const prev = meta.chartPreviousClose || meta.previousClose;
+            const change = price - prev;
+            const changePct = (change / prev) * 100;
+            return { price, change, changePct };
         }
 
         async function loadPrices() {
-            const allSymbols = [...tickers, clSymbol];
-            for (const sym of allSymbols) {
-                const id = sym === clSymbol ? 'CL' : sym;
-                const result = await fetchPrice(sym);
-                const priceEl = document.getElementById('price-' + id);
-                const changeEl = document.getElementById('change-' + id);
-                if (result && priceEl) {
-                    priceEl.textContent = '$' + result.price.toFixed(2);
-                    const sign = result.change >= 0 ? '+' : '';
-                    changeEl.textContent = `${sign}${result.change.toFixed(2)} (${sign}${result.changePct.toFixed(2)}%)`;
-                    changeEl.classList.remove('up', 'down');
-                    changeEl.classList.add(result.change >= 0 ? 'up' : 'down');
-                } else if (priceEl) {
-                    priceEl.textContent = 'Unavailable';
-                    changeEl.textContent = '—';
+            for (const pos of positions) {
+                const priceEl = document.getElementById('price-' + pos.id);
+                const changeEl = document.getElementById('change-' + pos.id);
+                try {
+                    let result;
+                    if (pos.source === 'finnhub') {
+                        result = await fetchFinnhub(pos.sym);
+                    } else {
+                        result = await fetchYahooViaProxy(pos.sym);
+                    }
+                    if (result && priceEl) {
+                        priceEl.textContent = '$' + result.price.toFixed(2);
+                        const sign = result.change >= 0 ? '+' : '';
+                        changeEl.textContent = `${sign}${result.change.toFixed(2)} (${sign}${result.changePct.toFixed(2)}%)`;
+                        changeEl.classList.remove('up', 'down');
+                        changeEl.classList.add(result.change >= 0 ? 'up' : 'down');
+                    } else {
+                        if (priceEl) { priceEl.textContent = 'Unavailable'; changeEl.textContent = '—'; }
+                    }
+                } catch(e) {
+                    if (priceEl) { priceEl.textContent = 'Unavailable'; changeEl.textContent = '—'; }
                 }
             }
         }
