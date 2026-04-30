@@ -634,16 +634,19 @@
         const tickers = ['EWY', 'EWA', 'CCJ', 'LEU', 'OKLO'];
         const clSymbol = 'CL=F';
 
+        // Uses allorigins.win as a CORS proxy to reach Yahoo Finance
         async function fetchPrice(symbol) {
             try {
-                const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=2d`;
-                const res = await fetch(url);
-                const data = await res.json();
+                const yahooUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=2d`;
+                const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(yahooUrl)}`;
+                const res = await fetch(proxyUrl);
+                const wrapper = await res.json();
+                const data = JSON.parse(wrapper.contents);
                 const meta = data.chart.result[0].meta;
                 const price = meta.regularMarketPrice;
                 const prev = meta.chartPreviousClose || meta.previousClose;
                 const change = price - prev;
-                const changePct = ((change / prev) * 100);
+                const changePct = (change / prev) * 100;
                 return { price, change, changePct };
             } catch(e) {
                 return null;
@@ -661,6 +664,7 @@
                     priceEl.textContent = '$' + result.price.toFixed(2);
                     const sign = result.change >= 0 ? '+' : '';
                     changeEl.textContent = `${sign}${result.change.toFixed(2)} (${sign}${result.changePct.toFixed(2)}%)`;
+                    changeEl.classList.remove('up', 'down');
                     changeEl.classList.add(result.change >= 0 ? 'up' : 'down');
                 } else if (priceEl) {
                     priceEl.textContent = 'Unavailable';
