@@ -90,6 +90,38 @@
                 font-size: 3rem;
             }
         }
+    
+        .nav-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #e63946;
+            color: white;
+            font-size: 0.5rem;
+            font-weight: 700;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            margin-left: 3px;
+            vertical-align: middle;
+            line-height: 1;
+        }
+    
+        .nav-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #e63946;
+            color: white;
+            font-size: 0.5rem;
+            font-weight: 700;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            margin-left: 3px;
+            vertical-align: middle;
+            line-height: 1;
+        }
     </style>
 </head>
 <body>
@@ -100,7 +132,7 @@
             <li><a href="shows.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Shows</a></li>
             <li><a href="about.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Story</a></li>
             <li><a href="press.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Press</a></li>
-            <li><a href="conversations-with-claude.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Blog</a></li>
+            <li><a href="conversations-with-claude.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Blog<span class="nav-badge" id="cwc-badge">1</span></a></li>
             <li><a href="investments.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Investments</a></li>
             <li><a href="contact.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Contact</a></li>
         </ul>
@@ -138,5 +170,21 @@
         </p>
         <a href="mailto:pkleinhansmedia@gmail.com" class="back-link">pkleinhansmedia@gmail.com</a>
     </div>
+    <script>
+        var postDate = new Date('2026-07-02');
+        var oneWeek = 7 * 24 * 60 * 60 * 1000;
+        var badge = document.getElementById('cwc-badge');
+        if (badge && (Date.now() - postDate.getTime() > oneWeek)) {
+            badge.style.display = 'none';
+        }
+    </script>
+    <script>
+        var postDate = new Date('2026-07-02');
+        var oneWeek = 7 * 24 * 60 * 60 * 1000;
+        var badge = document.getElementById('cwc-badge');
+        if (badge && (Date.now() - postDate.getTime() > oneWeek)) {
+            badge.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
