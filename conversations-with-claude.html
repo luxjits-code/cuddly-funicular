@@ -46,6 +46,22 @@
         .newsletter-signup button { padding: 0.9rem 1.5rem; font-family: 'Work Sans', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; background: var(--black); color: var(--white); border: 2px solid var(--black); cursor: pointer; transition: all 0.3s ease; white-space: nowrap; }
         .newsletter-signup button:hover { background: var(--accent); border-color: var(--accent); }
         @media (max-width: 480px) { .newsletter-signup form { flex-direction: column; } .newsletter-signup input[type="email"] { border-right: 2px solid var(--black); border-bottom: none; } .newsletter-signup button { width: 100%; } }
+    
+        .nav-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #e63946;
+            color: white;
+            font-size: 0.5rem;
+            font-weight: 700;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            margin-left: 3px;
+            vertical-align: middle;
+            line-height: 1;
+        }
     </style>
 </head>
 <body>
@@ -56,7 +72,7 @@
             <li><a href="shows.html">Shows</a></li>
             <li><a href="about.html">Story</a></li>
             <li><a href="press.html">Press</a></li>
-            <li><a href="conversations-with-claude.html">Blog</a></li>
+            <li><a href="conversations-with-claude.html">Blog<span class="nav-badge" id="cwc-badge">1</span></a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -116,5 +132,13 @@
         </div>
 
     </div>
+    <script>
+        var postDate = new Date('2026-07-02');
+        var oneWeek = 7 * 24 * 60 * 60 * 1000;
+        var badge = document.getElementById('cwc-badge');
+        if (badge && (Date.now() - postDate.getTime() > oneWeek)) {
+            badge.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
