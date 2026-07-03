@@ -771,6 +771,38 @@
                 font-size: 1.9rem;
             }
         }
+    
+        .nav-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #e63946;
+            color: white;
+            font-size: 0.5rem;
+            font-weight: 700;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            margin-left: 3px;
+            vertical-align: middle;
+            line-height: 1;
+        }
+    
+        .nav-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #e63946;
+            color: white;
+            font-size: 0.5rem;
+            font-weight: 700;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            margin-left: 3px;
+            vertical-align: middle;
+            line-height: 1;
+        }
     </style>
 </head>
 <body>
@@ -781,7 +813,7 @@
             <li><a href="shows.html">Shows</a></li>
             <li><a href="about.html">Story</a></li>
             <li><a href="press.html">Press</a></li>
-            <li><a href="conversations-with-claude.html">Blog</a></li>
+            <li><a href="conversations-with-claude.html">Blog<span class="nav-badge" id="cwc-badge">1</span></a></li>
             <li><a href="investments.html">Investments</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -898,5 +930,21 @@
             <p>&copy; 2026 Peter Kleinhans. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        var postDate = new Date('2026-07-02');
+        var oneWeek = 7 * 24 * 60 * 60 * 1000;
+        var badge = document.getElementById('cwc-badge');
+        if (badge && (Date.now() - postDate.getTime() > oneWeek)) {
+            badge.style.display = 'none';
+        }
+    </script>
+    <script>
+        var postDate = new Date('2026-07-02');
+        var oneWeek = 7 * 24 * 60 * 60 * 1000;
+        var badge = document.getElementById('cwc-badge');
+        if (badge && (Date.now() - postDate.getTime() > oneWeek)) {
+            badge.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
