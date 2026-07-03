@@ -6,21 +6,19 @@
     <title>Press - Peter Kleinhans</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --white: #ffffff;
             --black: #0a0a0a;
             --gray-light: #f5f5f5;
             --gray-mid: #666666;
+            --gray-border: #e0e0e0;
             --accent: #2952a3;
+            --accent-light: #e8edf7;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Work Sans', sans-serif;
@@ -29,420 +27,550 @@
             line-height: 1.6;
         }
 
-        .container {
+        /* ── NAV ── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: white; z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid #f0f0f0;
+            font-family: 'Work Sans', sans-serif;
+        }
+        nav .nav-brand { font-size: 0.85rem; letter-spacing: 0.15em; font-weight: 600; }
+        nav .nav-brand a { text-decoration: none; color: var(--black); }
+        nav ul { display: flex; gap: 1.5rem; list-style: none; }
+        nav ul li a {
+            text-decoration: none; color: var(--black);
+            font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;
+        }
+        nav ul li a:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            nav { padding: 0.75rem 1rem; flex-wrap: wrap; }
+            nav .nav-brand { font-size: 0.7rem; margin-bottom: 0.5rem; width: 100%; text-align: center; }
+            nav ul { width: 100%; justify-content: center; gap: 0.75rem; }
+            nav ul li a { font-size: 0.55rem; }
+        }
+
+        /* ── PAGE HEADER ── */
+        .page-header {
+            padding: 9rem 4rem 3rem;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 8rem 4rem 4rem;
         }
-
-        h1 {
+        .page-header h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
+            font-size: 4rem; font-weight: 300;
             letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
         }
-
-        .press-intro {
-            font-size: 1.1rem;
+        .page-header p {
+            font-size: 1.05rem;
             color: var(--gray-mid);
-            margin-bottom: 3rem;
-            max-width: 700px;
+            max-width: 600px;
         }
 
-        /* AS FEATURED IN */
+        @media (max-width: 768px) {
+            .page-header { padding: 7rem 1.5rem 2rem; }
+            .page-header h1 { font-size: 2.5rem; }
+        }
+
+        /* ── PRESS KIT BUTTON ── */
+        .press-kit-bar {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 4rem;
+        }
+        .press-kit-bar a {
+            display: inline-block;
+            background: var(--accent); color: white;
+            padding: 0.85rem 2.5rem;
+            text-decoration: none; font-size: 0.85rem;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            transition: background 0.2s ease;
+            border: 2px solid var(--accent);
+        }
+        .press-kit-bar a:hover { background: var(--black); border-color: var(--black); }
+
+        @media (max-width: 768px) {
+            .press-kit-bar { padding: 0 1.5rem; }
+        }
+
+        /* ── AS FEATURED IN ── */
         .featured-in {
-            border-top: 1px solid #e0e0e0;
-            border-bottom: 1px solid #e0e0e0;
-            padding: 2rem 0;
-            margin-bottom: 4rem;
+            background: var(--gray-light);
+            padding: 2.5rem 4rem;
+            margin-bottom: 5rem;
         }
-
+        .featured-in-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
         .featured-in-label {
             font-size: 0.7rem;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--gray-mid);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
+            text-align: center;
         }
-
         .featured-in-logos {
             display: flex;
             align-items: center;
-            gap: 3rem;
+            justify-content: center;
+            gap: 4rem;
             flex-wrap: wrap;
         }
-
-        .outlet-logo {
-            text-decoration: none;
-            color: var(--gray-mid);
-            transition: color 0.3s ease;
+        .outlet-logo-item {
             display: flex;
+            flex-direction: column;
             align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            opacity: 0.75;
+            transition: opacity 0.2s ease;
         }
-
-        .outlet-logo:hover {
-            color: var(--black);
-        }
-
-        .outlet-logo span {
+        .outlet-logo-item:hover { opacity: 1; }
+        .outlet-logo-text {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.25rem;
-            font-weight: 400;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--black);
             letter-spacing: 0.05em;
             white-space: nowrap;
         }
-
-        .outlet-logo.serif-bold span {
-            font-weight: 600;
-            font-size: 1.1rem;
+        .outlet-logo-sub {
+            font-size: 0.6rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray-mid);
+        }
+        /* Styled logo treatments per outlet */
+        .outlet-la-weekly .outlet-logo-text {
             font-family: 'Work Sans', sans-serif;
+            font-weight: 600;
+            font-size: 1.05rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            color: #c8102e;
         }
-
-        /* FEATURED ARTICLE HERO */
-        .featured-hero {
-            background: var(--black);
-            color: var(--white);
-            padding: 3.5rem;
-            margin-bottom: 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .featured-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 60%);
-            z-index: 0;
-        }
-
-        .featured-hero > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .featured-badge {
-            display: inline-block;
-            font-size: 0.65rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #a0b4d6;
-            border: 1px solid #a0b4d6;
-            padding: 0.3rem 0.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .featured-outlet {
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #a0b4d6;
-            margin-bottom: 1rem;
-        }
-
-        .featured-hero h2 {
+        .outlet-1883 .outlet-logo-text {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.4rem;
-            font-weight: 300;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            max-width: 700px;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--black);
         }
-
-        .featured-pullquote {
+        .outlet-hru .outlet-logo-text {
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .outlet-klef .outlet-logo-text {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.4rem;
             font-style: italic;
-            font-weight: 300;
-            line-height: 1.5;
-            color: #d0d8e8;
-            border-left: 2px solid var(--accent);
-            padding-left: 1.5rem;
-            margin: 1.5rem 0 2rem;
-            max-width: 680px;
+        }
+        .outlet-divider {
+            width: 1px;
+            height: 40px;
+            background: var(--gray-border);
         }
 
-        .featured-meta {
-            font-size: 0.8rem;
-            color: #888;
+        @media (max-width: 768px) {
+            .featured-in { padding: 2rem 1.5rem; }
+            .featured-in-logos { gap: 2rem; }
+            .outlet-divider { display: none; }
+        }
+
+        /* ── FEATURED ARTICLE HERO ── */
+        .featured-section {
+            max-width: 1200px;
+            margin: 0 auto 5rem;
+            padding: 0 4rem;
+        }
+        .section-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
             margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--gray-border);
         }
 
-        .featured-excerpt {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: #bbb;
-            max-width: 680px;
-            margin-bottom: 2rem;
+        .featured-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid var(--black);
+            overflow: hidden;
         }
-
-        .featured-link {
+        .featured-hero-text {
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .featured-outlet-tag {
             display: inline-block;
-            color: var(--white);
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #c8102e;
+            background: #fff0f2;
+            padding: 0.3rem 0.75rem;
+            margin-bottom: 1.5rem;
+            width: fit-content;
+        }
+        .featured-hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.25rem;
+            font-weight: 400;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+        .featured-hero-byline {
+            font-size: 0.8rem;
+            color: var(--gray-mid);
+            letter-spacing: 0.05em;
+            margin-bottom: 1.75rem;
+        }
+        .featured-hero-excerpt {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: #333;
+            margin-bottom: 2rem;
+            flex: 1;
+        }
+        .featured-hero-excerpt em {
+            font-style: italic;
+        }
+        .featured-hero-link {
+            display: inline-block;
+            background: var(--black);
+            color: white;
+            padding: 0.85rem 2rem;
             text-decoration: none;
             font-size: 0.8rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            border-bottom: 1px solid rgba(255,255,255,0.4);
-            padding-bottom: 2px;
-            transition: all 0.3s ease;
+            transition: background 0.2s ease;
+            width: fit-content;
+        }
+        .featured-hero-link:hover { background: var(--accent); }
+
+        .featured-hero-quote {
+            background: var(--black);
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .featured-hero-quote blockquote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-weight: 300;
+            font-style: italic;
+            color: white;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+        .featured-hero-quote blockquote::before {
+            content: '\201C';
+            font-size: 4rem;
+            line-height: 0;
+            vertical-align: -0.5em;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 1rem;
+        }
+        .featured-quote-attr {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+        }
+        .featured-quote-attr span {
+            color: rgba(255,255,255,0.9);
         }
 
-        .featured-link:hover {
-            border-color: var(--white);
+        @media (max-width: 900px) {
+            .featured-hero { grid-template-columns: 1fr; }
+            .featured-hero-quote { padding: 2.5rem; }
+            .featured-hero-quote blockquote { font-size: 1.4rem; }
+        }
+        @media (max-width: 768px) {
+            .featured-section { padding: 0 1.5rem; }
+            .featured-hero-text { padding: 2rem; }
+            .featured-hero-title { font-size: 1.75rem; }
         }
 
-        /* PRESS GRID */
+        /* ── PRESS GRID ── */
+        .press-section {
+            max-width: 1200px;
+            margin: 0 auto 6rem;
+            padding: 0 4rem;
+        }
+
         .press-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            border-top: 1px solid var(--black);
+            border-left: 1px solid var(--black);
         }
 
         .press-item {
-            border: 1px solid #e0e0e0;
+            border-right: 1px solid var(--black);
+            border-bottom: 1px solid var(--black);
             padding: 2rem;
-            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            transition: background 0.2s ease;
+            position: relative;
+            overflow: hidden;
         }
-
-        .press-item:hover {
-            border-color: var(--accent);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        .press-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
         }
+        .press-item:hover::after { transform: scaleX(1); }
+        .press-item:hover { background: #fafafa; }
 
+        .press-item-outlet {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
         .press-item h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.35rem;
+            font-weight: 400;
+            line-height: 1.3;
+            margin-bottom: 0.4rem;
         }
-
-        .press-meta {
-            font-size: 0.85rem;
+        .press-item-date {
+            font-size: 0.75rem;
             color: var(--gray-mid);
             margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
         }
-
-        .press-excerpt {
-            font-size: 0.95rem;
-            line-height: 1.6;
+        .press-item p {
+            font-size: 0.9rem;
+            line-height: 1.65;
+            color: #444;
             margin-bottom: 1.5rem;
+            flex: 1;
         }
-
-        .press-link {
-            display: inline-block;
-            color: var(--accent);
+        .press-item a.read-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--black);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            border-bottom: 1px solid var(--accent);
-            transition: all 0.3s ease;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            margin-top: auto;
         }
+        .press-item a.read-link:hover { color: var(--accent); }
+        .press-item a.read-link::after { content: '→'; }
 
-        .press-link:hover {
-            color: var(--black);
-            border-color: var(--black);
+        @media (max-width: 900px) {
+            .press-grid { grid-template-columns: repeat(2, 1fr); }
         }
-
         @media (max-width: 768px) {
-            .container {
-                padding: 6rem 2rem 3rem;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .featured-hero {
-                padding: 2rem;
-            }
-
-            .featured-hero h2 {
-                font-size: 1.8rem;
-            }
-
-            .featured-pullquote {
-                font-size: 1.15rem;
-            }
-
-            .press-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .featured-in-logos {
-                gap: 1.5rem;
-            }
+            .press-section { padding: 0 1.5rem; }
+            .press-grid { grid-template-columns: 1fr; }
+        }
+    
+        .nav-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #e63946;
+            color: white;
+            font-size: 0.5rem;
+            font-weight: 700;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            margin-left: 3px;
+            vertical-align: middle;
+            line-height: 1;
         }
     </style>
 </head>
 <body>
-    <nav style="position: fixed; top: 0; left: 0; right: 0; background: white; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0f0f0; font-family: 'Work Sans', sans-serif;">
-        <div style="font-size: 0.85rem; letter-spacing: 0.15em; font-weight: 600;"><a href="index.html" style="text-decoration: none; color: #0a0a0a;">PETER KLEINHANS</a></div>
-        <ul style="display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0;">
-            <li><a href="listen.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Listen</a></li>
-            <li><a href="shows.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Shows</a></li>
-            <li><a href="about.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Story</a></li>
-            <li><a href="press.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Press</a></li>
-            <li><a href="conversations-with-claude.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Blog</a></li>
-            <li><a href="investments.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Investments</a></li>
-            <li><a href="contact.html" style="text-decoration: none; color: #0a0a0a; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">Contact</a></li>
+
+    <nav>
+        <div class="nav-brand"><a href="index.html">PETER KLEINHANS</a></div>
+        <ul>
+            <li><a href="listen.html">Listen</a></li>
+            <li><a href="shows.html">Shows</a></li>
+            <li><a href="about.html">Story</a></li>
+            <li><a href="press.html">Press</a></li>
+            <li><a href="conversations-with-claude.html">Blog<span class="nav-badge" id="cwc-badge">1</span></a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <style>
-        @media (max-width: 768px) {
-            nav {
-                padding: 0.75rem 1rem !important;
-                flex-wrap: wrap;
-            }
-            nav div {
-                font-size: 0.7rem !important;
-                margin-bottom: 0.5rem;
-                width: 100%;
-                text-align: center;
-            }
-            nav ul {
-                width: 100%;
-                justify-content: center;
-                gap: 0.75rem !important;
-            }
-            nav ul li a {
-                font-size: 0.55rem !important;
-            }
-        }
-    </style>
-
-    <div class="container">
+    <div class="page-header">
         <h1>Press</h1>
-        <p class="press-intro">
-            Press coverage and reviews of Peter Kleinhans' music, performances, and career across harness racing and songwriting.
-        </p>
+        <p>Coverage, reviews, and interviews spanning Peter Kleinhans' career across harness racing and songwriting.</p>
+    </div>
 
+    <div class="press-kit-bar">
+        <a href="https://luxjits-code.github.io/cuddly-funicular/Peter-Kleinhans-Press-Kit.pdf" download>Download Press Kit (PDF)</a>
+    </div>
 
-
-        <!-- AS FEATURED IN -->
-        <div class="featured-in">
+    <!-- AS FEATURED IN -->
+    <div class="featured-in">
+        <div class="featured-in-inner">
             <div class="featured-in-label">As Featured In</div>
             <div class="featured-in-logos">
-                <a href="https://www.laweekly.com/peter-kleinhans-maps-the-modern-condition-on-selections/" target="_blank" class="outlet-logo">
-                    <span style="font-family: 'Work Sans', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase;">LA Weekly</span>
+                <a href="https://www.laweekly.com/peter-kleinhans-maps-the-modern-condition-on-selections/" target="_blank" class="outlet-logo-item outlet-la-weekly">
+                    <div class="outlet-logo-text">LA Weekly</div>
                 </a>
-                <a href="https://1883magazine.com/peter-kleinhans-selections-18-questions/" target="_blank" class="outlet-logo">
-                    <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; letter-spacing: 0.06em;">1883 Magazine</span>
+                <div class="outlet-divider"></div>
+                <a href="https://1883magazine.com/peter-kleinhans-selections-18-questions/" target="_blank" class="outlet-logo-item outlet-1883">
+                    <div class="outlet-logo-text">1883 Magazine</div>
                 </a>
-                <a href="https://harnessracingupdate.com/2024/10/20/peter-kleinhans-is-harness-racings-renaissance-man-2/" target="_blank" class="outlet-logo">
-                    <span style="font-family: 'Work Sans', sans-serif; font-weight: 300; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase;">Harness Racing Update</span>
+                <div class="outlet-divider"></div>
+                <a href="https://harnessracingupdate.com/2024/10/20/peter-kleinhans-is-harness-racings-renaissance-man-2/" target="_blank" class="outlet-logo-item outlet-hru">
+                    <div class="outlet-logo-text">Harness Racing Update</div>
                 </a>
-                <a href="https://klefnotes.com/music-features/blog/7676351/album-review-peter-kleinhans-by-every-probability-a-soundtrack-for-being-human" target="_blank" class="outlet-logo">
-                    <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic;">Klef Notes</span>
-                </a>
-                <a href="https://eclecticmusiclover.com/2019/11/30/peter-kleinhans-releases-new-video-for-somethings-not-right/" target="_blank" class="outlet-logo">
-                    <span style="font-family: 'Work Sans', sans-serif; font-weight: 300; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">Eclectic Music Lover</span>
+                <div class="outlet-divider"></div>
+                <a href="https://klefnotes.com/music-features/blog/7676351/album-review-peter-kleinhans-by-every-probability-a-soundtrack-for-being-human" target="_blank" class="outlet-logo-item outlet-klef">
+                    <div class="outlet-logo-text">Klef Notes</div>
                 </a>
             </div>
         </div>
+    </div>
 
-        <!-- FEATURED ARTICLE: LA WEEKLY -->
+    <!-- FEATURED ARTICLE -->
+    <div class="featured-section">
+        <div class="section-label">Featured Coverage</div>
         <div class="featured-hero">
-            <div class="featured-badge">Featured</div>
-            <div class="featured-outlet">LA Weekly &nbsp;·&nbsp; April 7, 2026 &nbsp;·&nbsp; Nia Bowers</div>
-            <h2>Peter Kleinhans Maps the Modern Condition on "Selections"</h2>
-            <div class="featured-pullquote">
-                "As 'Selections' unfolds, it reveals Peter Kleinhans as a deeply attentive observer — his perspective moving from horses to markets to music and ultimately to the unease of watching a culture shift as the world becomes just a little too different, too fast."
+            <div class="featured-hero-text">
+                <div>
+                    <div class="featured-outlet-tag">LA Weekly</div>
+                    <h2 class="featured-hero-title">Peter Kleinhans Maps the Modern Condition on "Selections"</h2>
+                    <div class="featured-hero-byline">Nia Bowers &nbsp;·&nbsp; April 7, 2026</div>
+                    <p class="featured-hero-excerpt">
+                        Peter Kleinhans stands at the center of an unusually wide-ranging Venn diagram. His new album, <em>Selections</em>, brings together eight tracks recorded between 2018 and 2025, exploring themes of technological anxiety, modern desire, and the struggle to remain human as algorithms are designed to make us more predictable.
+                    </p>
+                </div>
+                <a href="https://www.laweekly.com/peter-kleinhans-maps-the-modern-condition-on-selections/" target="_blank" class="featured-hero-link">Read Full Article</a>
             </div>
-            <p class="featured-excerpt">
-                Kleinhans examines technological anxiety, modern desire, and the struggle to remain human as algorithms are designed to make us more predictable. His sound moves fluidly between pop and folk rock, with guitar work that leans into jazz fusion and a warm, distinctive voice that has drawn comparisons to Dave Matthews.
-            </p>
-            <a href="https://www.laweekly.com/peter-kleinhans-maps-the-modern-condition-on-selections/" target="_blank" class="featured-link">Read Full Article →</a>
+            <div class="featured-hero-quote">
+                <blockquote>
+                    Peter Kleinhans emerges as a deeply attentive observer — his perspective moving from horses to markets to music and ultimately to the unease of watching a culture shift too fast.
+                </blockquote>
+                <div class="featured-quote-attr"><span>LA Weekly</span> &nbsp;·&nbsp; Nia Bowers, April 2026</div>
+            </div>
         </div>
+    </div>
 
-        <!-- PRESS GRID -->
+    <!-- PRESS GRID -->
+    <div class="press-section">
+        <div class="section-label">All Press</div>
         <div class="press-grid">
 
             <div class="press-item">
-                <h3>18 Questions: Peter Kleinhans on Selections</h3>
-                <div class="press-meta">1883 Magazine · March 24, 2026</div>
-                <p class="press-excerpt">
-                    An in-depth conversation spanning fatherhood, the long road into music, and why Kleinhans would rather ask questions than offer answers. He talks about the ideas behind Selections, from digital addiction and monetary policy to a forgotten colonial uprising.
-                </p>
-                <a href="https://1883magazine.com/peter-kleinhans-selections-18-questions/" target="_blank" class="press-link">Read Interview →</a>
+                <div class="press-item-outlet">1883 Magazine</div>
+                <h3>18 Questions With Peter Kleinhans on Selections</h3>
+                <div class="press-item-date">March 24, 2026</div>
+                <p>A wide-ranging interview covering fatherhood, the long road into music, and why Kleinhans would rather ask questions than offer answers. Includes his thoughts on songwriting, philosophy, and the systems shaping everyday life.</p>
+                <a href="https://1883magazine.com/peter-kleinhans-selections-18-questions/" target="_blank" class="read-link">Read Interview</a>
             </div>
 
             <div class="press-item">
+                <div class="press-item-outlet">Harness Racing Update</div>
                 <h3>Harness Racing's Renaissance Man</h3>
-                <div class="press-meta">Harness Racing Update · October 2024</div>
-                <p class="press-excerpt">
-                    Among a host of interests, Peter Kleinhans is a songwriter, singer, guitar player, part owner of three racetracks, non-practicing lawyer, race caller, harness breeder, driver and trainer, writer, livestock farmer and investor. A profile of his multifaceted career.
-                </p>
-                <a href="https://harnessracingupdate.com/2024/10/20/peter-kleinhans-is-harness-racings-renaissance-man-2/" target="_blank" class="press-link">Read Article →</a>
+                <div class="press-item-date">October 2024</div>
+                <p>Among a host of interests, Peter Kleinhans is a songwriter, singer, guitar player, part owner of three racetracks, non-practicing lawyer, race caller, harness breeder, driver and trainer, writer, livestock farmer and investor.</p>
+                <a href="https://harnessracingupdate.com/2024/10/20/peter-kleinhans-is-harness-racings-renaissance-man-2/" target="_blank" class="read-link">Read Article</a>
             </div>
 
             <div class="press-item">
+                <div class="press-item-outlet">Klef Notes</div>
                 <h3>Album Review: "By Every Probability"</h3>
-                <div class="press-meta">Klef Notes · December 2025</div>
-                <p class="press-excerpt">
-                    A soundtrack for being human. Peter Kleinhans' latest album explores probability, fate, and the choices that define us with his signature blend of folk, pop, and rock storytelling.
-                </p>
-                <a href="https://klefnotes.com/music-features/blog/7676351/album-review-peter-kleinhans-by-every-probability-a-soundtrack-for-being-human" target="_blank" class="press-link">Read Review →</a>
+                <div class="press-item-date">December 2025</div>
+                <p>A soundtrack for being human. Peter Kleinhans' latest album explores probability, fate, and the choices that define us with his signature blend of folk, pop, and rock storytelling.</p>
+                <a href="https://klefnotes.com/music-features/blog/7676351/album-review-peter-kleinhans-by-every-probability-a-soundtrack-for-being-human" target="_blank" class="read-link">Read Review</a>
             </div>
 
             <div class="press-item">
+                <div class="press-item-outlet">Klef Notes</div>
                 <h3>Album Review: "Something's Not Right"</h3>
-                <div class="press-meta">Klef Notes · 2018</div>
-                <p class="press-excerpt">
-                    Peter Kleinhans' debut album receives critical acclaim for its thoughtful songwriting and distinctive vocal delivery, establishing him as a compelling new voice in the singer-songwriter tradition.
-                </p>
-                <a href="https://klefnotes.com/blogs/music-reviews/posts/6053558/peter-kleinhans-something-s-not-right" target="_blank" class="press-link">Read Review →</a>
+                <div class="press-item-date">2018</div>
+                <p>Peter Kleinhans' debut album receives critical acclaim for its thoughtful songwriting and distinctive vocal delivery, establishing him as a compelling new voice in the singer-songwriter tradition.</p>
+                <a href="https://klefnotes.com/blogs/music-reviews/posts/6053558/peter-kleinhans-something-s-not-right" target="_blank" class="read-link">Read Review</a>
             </div>
 
             <div class="press-item">
+                <div class="press-item-outlet">Eclectic Music Lover</div>
                 <h3>New Video for "Something's Not Right"</h3>
-                <div class="press-meta">Eclectic Music Lover · November 2019</div>
-                <p class="press-excerpt">
-                    "One of the best debut albums we have reviewed," says LA Music Critic. Peter releases a brilliant and compelling music video that brings his powerful lyrics about American uncertainty to life through an entertaining yet troubling narrative.
-                </p>
-                <a href="https://eclecticmusiclover.com/2019/11/30/peter-kleinhans-releases-new-video-for-somethings-not-right/" target="_blank" class="press-link">Read Article →</a>
+                <div class="press-item-date">November 2019</div>
+                <p>"One of the best debut albums we have reviewed." Peter releases a compelling music video that brings his powerful lyrics about American uncertainty to life through an entertaining yet troubling narrative.</p>
+                <a href="https://eclecticmusiclover.com/2019/11/30/peter-kleinhans-releases-new-video-for-somethings-not-right/" target="_blank" class="read-link">Read Article</a>
             </div>
 
             <div class="press-item">
-                <h3>EP Review: Peter Kleinhans</h3>
-                <div class="press-meta">Klef Notes</div>
-                <p class="press-excerpt">
-                    An in-depth review of Peter Kleinhans' EP showcasing his narrative songwriting style and distinctive musical voice that blends folk, pop, and rock influences.
-                </p>
-                <a href="https://klefnotes.com/blogs/music-reviews/posts/6623425/ep-review-peter-kleinhans" target="_blank" class="press-link">Read Review →</a>
-            </div>
-
-            <div class="press-item">
+                <div class="press-item-outlet">The Other Side Reviews</div>
                 <h3>A Chat with Peter Kleinhans</h3>
-                <div class="press-meta">The Other Side Reviews · March 2021</div>
-                <p class="press-excerpt">
-                    An intimate conversation with Peter Kleinhans about his music, his unique path from harness racing to songwriting, and the stories behind his songs.
-                </p>
-                <a href="https://www.theothersidereviews.com/a-chat-with-peter-kleinhans-03-05-2021/" target="_blank" class="press-link">Read Interview →</a>
+                <div class="press-item-date">March 2021</div>
+                <p>An intimate conversation about his music, his unique path from harness racing to songwriting, and the stories behind his songs.</p>
+                <a href="https://www.theothersidereviews.com/a-chat-with-peter-kleinhans-03-05-2021/" target="_blank" class="read-link">Read Interview</a>
             </div>
 
             <div class="press-item">
+                <div class="press-item-outlet">Klef Notes</div>
+                <h3>EP Review: Peter Kleinhans</h3>
+                <div class="press-item-date"></div>
+                <p>An in-depth review of Peter Kleinhans' EP showcasing his narrative songwriting style and distinctive musical voice that blends folk, pop, and rock influences.</p>
+                <a href="https://klefnotes.com/blogs/music-reviews/posts/6623425/ep-review-peter-kleinhans" target="_blank" class="read-link">Read Review</a>
+            </div>
+
+            <div class="press-item">
+                <div class="press-item-outlet">Eclectic Music Lover</div>
                 <h3>Guest Post: The Ghost of Graffiti Past</h3>
-                <div class="press-meta">Eclectic Music Lover · October 2018</div>
-                <p class="press-excerpt">
-                    Peter writes a fascinating piece about his song "91st Street" and the allure of the 91st Street subway station in New York City, exploring urban memory and change.
-                </p>
-                <a href="https://eclecticmusiclover.com/2018/10/16/guest-post-the-ghost-of-graffiti-past-and-the-allure-of-the-91st-street-subway-station-by-peter-kleinhans/" target="_blank" class="press-link">Read Article →</a>
+                <div class="press-item-date">October 2018</div>
+                <p>Peter writes a fascinating piece about his song "91st Street" and the allure of the 91st Street subway station in New York City, exploring urban memory and change.</p>
+                <a href="https://eclecticmusiclover.com/2018/10/16/guest-post-the-ghost-of-graffiti-past-and-the-allure-of-the-91st-street-subway-station-by-peter-kleinhans/" target="_blank" class="read-link">Read Article</a>
             </div>
 
         </div>
     </div>
+
+    <script>
+        var postDate = new Date('2026-07-02');
+        var oneWeek = 7 * 24 * 60 * 60 * 1000;
+        var badge = document.getElementById('cwc-badge');
+        if (badge && (Date.now() - postDate.getTime() > oneWeek)) {
+            badge.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
