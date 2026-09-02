@@ -272,6 +272,43 @@
             overflow: hidden;
         }
 
+        .btn-large {
+            font-size: 1rem;
+            padding: 1.6rem 4.5rem;
+            letter-spacing: 0.25em;
+            box-shadow: 0 8px 30px rgba(140, 58, 74, 0.4);
+        }
+
+        .instructions-box {
+            margin-top: 1.75rem;
+            padding: 1.75rem 1.5rem;
+            border: 1.5px solid var(--gold-light);
+            background: rgba(0,0,0,0.15);
+        }
+
+        .instructions-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--warm-white);
+            margin-bottom: 1.1rem;
+        }
+
+        .reassurance-line {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: var(--warm-white);
+            font-weight: 500;
+            margin-bottom: 1.4rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .claim-highlight {
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+
         .btn-primary::before {
             content: '';
             position: absolute;
@@ -357,35 +394,95 @@
         .promo-code-display {
             display: inline-block;
             font-family: 'Work Sans', sans-serif;
-            font-size: 2rem;
-            font-weight: 500;
-            letter-spacing: 0.4em;
-            color: var(--gold-light);
-            padding: 0.5rem 0;
+            font-size: 3.75rem;
+            font-weight: 700;
+            letter-spacing: 0.35em;
+            color: var(--warm-white);
+            background: rgba(140, 58, 74, 0.35);
+            border: 2px solid var(--gold-light);
+            padding: 0.9rem 1.6rem 0.7rem 1.9rem;
+            margin: 0.75rem 0 1rem;
         }
 
         .promo-fine {
-            font-size: 0.65rem;
-            letter-spacing: 0.05em;
-            color: rgba(245,239,230,0.4);
+            font-size: 0.62rem;
+            letter-spacing: 0.03em;
+            color: rgba(245,239,230,0.35);
             margin-top: 0.5rem;
             font-style: italic;
+            line-height: 1.5;
         }
 
         .promo-case-warning {
-            font-size: 0.72rem;
-            letter-spacing: 0.05em;
-            color: var(--gold-light);
-            margin-top: 0.5rem;
-            margin-bottom: 0.25rem;
-            font-weight: 500;
+            font-size: 0.62rem;
+            letter-spacing: 0.03em;
+            color: rgba(245,239,230,0.4);
+            margin-top: 0.75rem;
+            margin-bottom: 0;
+            font-weight: 400;
+            font-style: italic;
         }
 
         .promo-case-warning strong {
             font-family: 'Work Sans', monospace;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.2em;
+            font-size: 0.68rem;
+            color: rgba(245,239,230,0.55);
+            font-style: normal;
+        }
+
+        /* CLAIM STEPS */
+        .claim-steps {
+            list-style: none;
+            counter-reset: claim-step;
+            text-align: left;
+            max-width: 420px;
+            margin: 0 auto 1.25rem;
+            padding: 0;
+        }
+
+        .claim-steps li {
+            counter-increment: claim-step;
+            position: relative;
+            padding-left: 2.4rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: rgba(245, 239, 230, 0.85);
+        }
+
+        .claim-steps li::before {
+            content: counter(claim-step);
+            position: absolute;
+            left: 0;
+            top: -0.1rem;
+            width: 1.7rem;
+            height: 1.7rem;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--warm-white);
+            font-weight: 700;
             font-size: 0.85rem;
-            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .claim-steps li strong {
+            color: var(--warm-white);
+        }
+
+        .claim-code-line {
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--gold-light);
+        }
+
+        .claim-spam-note {
+            font-size: 0.75rem;
+            color: rgba(245, 239, 230, 0.55);
+            font-style: italic;
+            margin-top: 1rem;
         }
 
         /* EMAIL SIGNUP CTA */
@@ -656,14 +753,27 @@
             </div>
 
             <div class="cta-group">
-                <a href="https://citywinery.com/pages/locations/city-vineyard" target="_blank" class="btn-primary">
-                    Click Here to Get Your Tickets
+                <a href="https://citywinery.com/pages/locations/city-vineyard" target="_blank" class="btn-primary btn-large">
+                    Get Your Complimentary Tickets
                 </a>
 
                 <div class="promo-banner">
                     <p class="promo-label">First 50 Reservations Only</p>
-                    <p class="promo-desc">Complimentary ticket &amp; glass of wine — reserved for the first guests to book</p>
-                    <p class="promo-instruction" style="margin-bottom: 0;">Tickets go on sale October 1.</p>
+                    <p class="promo-desc">Your ticket + glass of wine are complimentary.</p>
+
+                    <div class="instructions-box">
+                        <p class="reassurance-line">The ticketing site will initially show a ticket price — don't worry. Your total becomes $0 when you enter the code at checkout.</p>
+                        <ol class="claim-steps">
+                            <li>Click the button above and <strong>choose your seats</strong>.</li>
+                            <li>Continue to <strong>checkout</strong>.</li>
+                            <li>Enter promo code <strong>LISTEN</strong> at checkout.</li>
+                            <li>Your total will change to <span class="claim-highlight">$0. No credit card required.</span></li>
+                        </ol>
+
+                        <div class="promo-code-display">LISTEN</div>
+                        <p class="promo-case-warning">Enter exactly as shown, in ALL CAPS.</p>
+                        <p class="promo-fine">Offer available to the first 50 reservations. Tickets go on sale October 1.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -731,11 +841,25 @@
     <section class="bottom-cta">
         <h2>Join us on<br>November 9th</h2>
         <p>
-            Seats are limited. First 50 to reserve get a complimentary ticket and glass of wine.
+            First 50 reservations only — your ticket &amp; glass of wine are complimentary.
         </p>
-        <a href="https://citywinery.com/pages/locations/city-vineyard" target="_blank" class="btn-primary">
-            Click Here to Get Your Tickets
+        <a href="https://citywinery.com/pages/locations/city-vineyard" target="_blank" class="btn-primary btn-large">
+            Get Your Complimentary Tickets
         </a>
+
+        <div class="instructions-box" style="max-width: 480px; margin-left: auto; margin-right: auto;">
+            <p class="reassurance-line">The ticketing site will initially show a ticket price — don't worry. Your total becomes $0 when you enter the code at checkout.</p>
+            <ol class="claim-steps">
+                <li>Click the button above and <strong>choose your seats</strong>.</li>
+                <li>Continue to <strong>checkout</strong>.</li>
+                <li>Enter promo code <strong>LISTEN</strong> at checkout.</li>
+                <li>Your total will change to <span class="claim-highlight">$0. No credit card required.</span></li>
+            </ol>
+
+            <div class="promo-code-display">LISTEN</div>
+            <p class="promo-case-warning">Enter exactly as shown, in ALL CAPS.</p>
+            <p class="promo-fine">Offer available to the first 50 reservations. Tickets go on sale October 1.</p>
+        </div>
     </section>
 
     <footer>
